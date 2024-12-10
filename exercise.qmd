@@ -2,14 +2,14 @@
 title: "Exercise"
 ---
 
-1.  Create an R Markdown file (`.Rmd`) and select an rticles template of your choice
+1.  Create an R Markdown file (`.Rmd`) and select an rticles template of your choice:
 
     -   Elsevier: Transportation Research Part A
     -   Springer: Lecture Notes in Computer Science
     -   Transportation Research Board (TRB)
     -   Taylor & Francis
 
-2.  Knit it first to make sure any package is missing and the output looks fine
+2.  **Knit it first** to make sure any package is missing and the output looks fine
 
 3.  Change your YAML document to include
 
@@ -17,7 +17,7 @@ title: "Exercise"
     -   Your affiliation and address
     -   Your e-mail
 
-4.  Change your document to include the following chapters
+4.  Change your document to include the following chapters, using \## headings
 
     -   Introduction
     -   Literature review
@@ -57,12 +57,12 @@ title: "Exercise"
 
 10. Make a cross-reference before a figure (pointing in the text to see Figure 1)
 
-11. Knit your pdf!
+11. **Knit your pdf!**
 
 12. Number lines
 
-13. Make it a paper for review, instead of preprint
+13. Make it a paper for `review`, instead of `preprint`
 
-14. Make it double blind
+14. Make it `doubleblind`
 
-15. Knit your pdf again!
+15. **Knit your pdf again!**
