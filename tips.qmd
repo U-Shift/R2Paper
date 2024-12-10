@@ -1,0 +1,100 @@
+---
+title: "Tips with R Markdown"
+author: "R Félix"
+eval: false
+bibliography: references.bib
+---
+
+## Cross-references
+
+You can refer to sections, figures, tables, and equations in your document using the `@ref` syntax.
+
+### With Sections
+
+You can refer to sections like this `[Section 1](#Introduction)`.
+This will show as "[Section 1](#Introduction)".
+
+### With figures
+
+You can refer to figures like this: `\@ref(fig:plot1)`.
+This will show as "Figure [1]()".
+For that, you need to add a label to the figure chunk, like this: `{#fig:plot1}`.
+or `fig.cap="\label{plot1} Caption of the plot"` in your r chunk.
+
+```{r plot1, out.width="100%", fig.cap="\\label{plot1} Caption of the plot"}
+plot(cars)
+```
+
+### With tables
+
+You can refer to tables like this: `\@ref(tab:table1)`.
+This will show as "Table [1]()".
+For that, you need to add a label to the table caption like this:
+
+```{r table1}
+# example with kable
+knitr::kable(head(iris),
+             caption = "\\label{table1}Caption of the table", # label here
+             fotmat = latex,
+             booktabs = TRUE)
+```
+
+::: {.callout-tip appearance="simple"}
+You don't need to use an ordered number, but just a name/label to your figures and tables.
+R markdown will handle then the order of them and provide them **sequential numbering**.
+:::
+
+## Create a table of contents
+
+You can create a table of contents (**toc**) with the headings of your document, a list of tables (**lot**) or a list of figures (**lof**), simply by adding the following in the YAML:
+
+``` yaml
+---
+title: "My Report"
+author: "Your Name"
+date: "2024-12-10"
+output: pdf_document
+toc: true
+numbersections: true
+number-depth: 3
+lof: true
+lot: true
+---
+```
+
+## LaTeX packages
+
+Sometimes, you need to use some LaTeX packages to customize your document.
+To use those, you can add the following in the YAML:
+
+``` yaml
+preamble: |
+  \biboptions{authoryear}
+  \usepackage{url}
+  \usepackage{pdflscape}
+  \usepackage{float}
+  \usepackage{booktabs}
+  \usepackage{longtable}
+  \usepackage{makecell}
+  \usepackage{multirow}
+```
+
+## Converting to word `.doc`
+
+It can be handful to convert your nice `.pdf` to a `.doc` file to send it to your supervisor, instead of a LaTeX or pdf file.
+
+To do so, you can simply open your favorite word processor and open your pdf file inside.
+Click OK to convert when prompt.
+
+![](images/clipboard-1432672920.png)
+
+Make some adjustments (sometimes it requires margins, spacing or line numbers), save it as `.doc` or `.docx`, and you are ready to go!
+
+No headings, table of contents, citations, cross-references, figures, tables are missing.
+
+## Elsevier paper example
+
+Example of a paper written in R Markdown and submitted in **pdf** and **LaTeX** for the Elsevier journal Computers, Environment and Urban Studies:\
+<https://github.com/U-Shift/biclar/blob/master/paper/PaperCEUS/PaperCEUS.Rmd>
+
+[@félix2025]
