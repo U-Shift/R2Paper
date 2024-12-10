@@ -2,10 +2,18 @@
 title: "Use R to write a paper"
 ---
 
-This is a Quarto website.
+<p> </p>
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+Materials for the practical module **A guide to writing a scientific paper using R**, of the [Research Methodologies in Natural and Social Sciences](https://fenix.tecnico.ulisboa.pt/disciplinas/MICNCS/2024-2025/1-semestre) course of the PhD in Transport Systems at IST-ULisboa.
 
-```{r}
-1 + 1
-```
+<p> </p>
+
+![](images/Ist-logo-01.jpg){fig-align="center" width="248"}
+
+<p> </p>
+
+::: callout-note
+## Note
+
+This website was totally written in R using [Quarto](https://quarto.org/docs/books/).
+:::

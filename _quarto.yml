@@ -1,20 +1,47 @@
 project:
-  type: website
+  type: book
 
-website:
-  title: "ResearchMethods24"
-  navbar:
-    left:
-      - href: index.qmd
-        text: Home
-      - software.qmd
-      - about.qmd
+book:
+  title: "A guide to writing a scientific paper using R"
+  subtitle: "Research Methodologies 2024"
+  author:
+   - name: "Rosa Félix"
+     email: rosamfelix@tecnico.pt
+     url: http://www.rosafelix.bike
+     orcid: 0000-0002-5642-6006
+     affiliation: "Instituto Superior Técnico - Universidade de Lisboa"
+  # date: today
+  repo-url: https://github.com/U-Shift/R2Paper
+  chapters:
+    - href: index.qmd
+      text: Home
+    - software.qmd
+    - rmarkdown.qmd
+    - startup.qmd
+    - about.qmd
+    # - references.qmd
+  page-footer:
+    left: "R Félix"
+    center: "Research Methodologies"
+    right: "December 2024"
 
 format:
   html:
-    theme: cosmo
-    css: styles.css
+    theme:
+      light: cosmo
+      dark: superhero
+    code-fold: show
+    code-tools: true
+    number-depth: 3
     toc: true
+    toc-expand: 3
+    css: styles.css
+    
+  pdf:
+    documentclass: scrreprt
+
+bibliography: references.bib
 
 editor: visual
 
+google-scholar: true

@@ -1,9 +1,21 @@
----
-title: "About"
----
+# About {.unnumbered}
 
-About this site
+## Rosa Félix {.unnumbered}
 
-```{r}
-1 + 1
-```
+*Senior Posdoctoral Researcher and Invited Assistant Professor*\
+CERIS, Instituto Superior Técnico - University of Lisbon\
+[Website](http://www.rosafelix.bike/) \| [Google Scholar](https://scholar.google.com/citations?hl=en&pli=1&authuser=1&user=weLjCZUAAAAJ) \| [Twitter](https://x.com/rosamfelix/) \| [GitHub](https://github.com/temospena) \| [Linkedin](https://www.linkedin.com/in/rosamfelix/)
+
+**Short bio**
+
+Rosa Félix is a senior post-doctoral researcher at the Instituto Superior Técnico – University of Lisbon and member of the [U-Shift lab](https://ushift.tecnico.ulisboa.pt), in the Transportation Research Group of [CERIS](https://ceris.pt).
+Having a background of Urban Planning Engineering, she completed her Ph.D. in Transport Systems in 2019 at Instituto Superior Técnico (MIT Portugal program), and was a Visiting Scholar at Portland State University in 2017/18.
+
+Rosa is an active mobility researcher, and excels in R and GIS.
+She is an open source and reproducible research enthusiast.
+Her publications include articles on cycling and behavior change, and open source code solutions to specific GIS and mobility problems.
+Every year, Rosa lectures a course for cycling infrastructure planning and design for practitioners, and also teaches GIS for transportation and introduction to programming for MSc course of Transportation Systems. 
+
+Rosa has worked in multiple R&D and consultancy projects with both municipalities and industry, such as the Municipality of Lisbon (2019-2022) and the Department for Transportation of Lisbon Metro (2023), in which she developed a digital tool - [*biclaR*](https://biclar.tmlmobilidade.pt) - to support the planning of the metropolitan cycling network, in collaboration with Institute for Transport Studies of the University of Leeds.
+
+![](images/rosa_greencap2000.jpg){fig-align="center" width="400"}

@@ -2,6 +2,7 @@
 eval: false
 code-fold: false
 engine: knitr
+author: "R Félix"
 ---
 
 # Software
@@ -14,8 +15,7 @@ In this chapter we will guide you through the installation of R, RStudio and the
 
 ## R
 
-You will need **R** installed on your computer.
-**R stats** (how it is also known) is a programming language and free software environment for statistical computing and graphics supported by the R Foundation for Statistical Computing.
+**R** or **R stats** (how it is also known) is a programming language and free software environment for statistical computing and graphics supported by the R Foundation for Statistical Computing.
 
 The download links live at [The Comprehensive R Archive Network](https://cran.r-project.org/) (aka CRAN).
 The most recent version is `4.4.1`, but you can use `>= 4.1.x` if you already have it installed.
@@ -23,15 +23,16 @@ The most recent version is `4.4.1`, but you can use `>= 4.1.x` if you already ha
 :::: {.panel-tabset .nav-pills}
 ### Windows
 
-[Download R-4.4.1 for Windows](https://cran.r-project.org/bin/windows/base/R-4.4.1-win.exe) and run the executable file.
+[Download R-4.4.2 for Windows](https://cran.r-project.org/bin/windows/base/R-4.4.2-win.exe) and run the executable file.
 
 ::: {.callout-important icon="false"}
-You will also need to install [Rtools](https://cran.r-project.org/bin/windows/Rtools/rtools44/rtools.html), which is a collection of tools necessary to build R packages in Windows.
+You will also need to install [Rtools](https://cran.r-project.org/bin/windows/Rtools/rtools44/rtools.html), which is a collection of tools necessary to build R packages in Windows.\
+Select the second link if you use an ARM processor (more recent), and the first link otherwise.
 :::
 
 ### Mac
 
-[Download R-4.4.1 for MacOX](https://cran.r-project.org/).
+[Download R-4.4.2 for MacOX](https://cran.r-project.org/bin/macosx/).
 You will have to choose between the arm64 or the x86-64 version.
 
 Download the `.pkg` file and install it as usual.
@@ -83,27 +84,25 @@ RStudio is available for free download from [Posit RStudio](https://posit.co/dow
 ::: {.panel-tabset .nav-pills}
 ### Windows 10/11
 
-[Download RStudio 2024.04](https://download1.rstudio.org/electron/windows/RStudio-2024.04.2-764.exe) and run the executable file.
+[Download RStudio 2024.09](https://download1.rstudio.org/electron/windows/RStudio-2024.09.1-394.exe) and run the executable file.
 
 ### MacOS
 
-[Download RStudio 2024.04](https://download1.rstudio.org/electron/macos/RStudio-2024.04.2-764.dmg) and install it as usual.
+[Download RStudio 2024.09](https://download1.rstudio.org/electron/macos/RStudio-2024.09.1-394.dmg) and install it as usual.
 
 ### Ubuntu
 
-> These are instructions for Ubuntu **22** / Debian 12.
+> These are instructions for Ubuntu **24** / Debian 12.
 > If you use other linux distribution, please follow the instructions on [Posit RStudio](https://posit.co/download/rstudio-desktop/).
 
 Install it via the terminal:
 
 ```{bash}
 sudo apt install libssl-dev libclang-dev
-wget https://download1.rstudio.org/electron/jammy/amd64/rstudio-2024.04.2-764-amd64.deb
+wget https://download1.rstudio.org/electron/jammy/amd64/rstudio-2024.09.1-394-amd64.deb
 sudo dpkg -i rstudio*
 rm -v rstudio*
 ```
-
-If you already use Ubuntu **24**, please check and replace the correct url from [RStudio Dailies](https://dailies.rstudio.com/)
 
 ```{bash}
 #| echo: false
@@ -118,7 +117,7 @@ You will need to install some packages to work with the data and scripts in this
 
 You can install them in RStudio by searching for them in the **Packages** tab:
 
-![](images/clipboard-3443685728.png)
+![](images/clipboard-812808100.png)
 
 **or** by running the following code in the console:
 
@@ -128,17 +127,18 @@ install.packages("rticles")
 install.packages("tidyverse")
 install.packages("readxl")
 
-install.packages(c("remotes", "devtools", "usethis")) # optional
-
+install.packages(c("remotes", "devtools", "usethis"))
 ```
 
 ## rticles
 
 You can install and use **rticles** from CRAN as follows:
 
-```         
+```{r}
 install.packages("rticles")
 ```
+
+See [chapter 3](startup.qmd) to setup an rticle template.
 
 ## tinytex
 
@@ -152,6 +152,7 @@ tinytex::install_tinytex()
 ```
 
 To use some LaTeX packages, you also need to install some `tlmgr` packages.
+Here is a list of the most common ones.
 
 ```{r}
 tinytex::tlmgr_install(c("algorithmicx", "algorithms", "amscls", "amsfonts", "amsmath", "apacite", "appendix", "atbegshi", "atveryend", "auxhook", "babel", "bibtex", "bigintcalc", "bitset", "booktabs", "cm", "colortbl", "ctablestack", "dehyph", "dvipdfmx", "dvips", "ec", "epstopdf-pkg", "etex", "etexcmds", "etoolbox", "euenc", "everyshi", "fancyvrb", "filehook", "firstaid", "float", "fontspec", "framed", "geometry", "gettitlestring", "glyphlist", "graphics", "graphics-cfg", "graphics-def", "helvetic", "hycolor", "hyperref", "hyph-utf8", "hyphen-base", "iftex", "inconsolata", "infwarerr", "intcalc", "jknapltx", "knuth-lib", "kpathsea", "kvdefinekeys", "kvoptions", "kvsetkeys", "l3backend", "l3kernel", "l3packages", "latex", "latex-amsmath-dev", "latex-bin", "latex-fonts", "latex-tools-dev", "latexconfig", "latexmk", "letltxmacro", "listings", "lm", "lm-math", "ltxcmds", "lua-alt-getopt", "lua-uni-algos", "luahbtex", "lualatex-math", "lualibs", "luaotfload", "luatex", "luatexbase", "makecell", "mdwtools", "metafont", "mfware", "modes", "multirow", "natbib", "ncctools", "pdfescape", "pdflscape", "pdftex", "pdftexcmds", "plain", "psnfss", "refcount", "rerunfilecheck", "rsfs", "scheme-infraonly", "selnolig", "setspace", "siunitx", "stringenc", "sttools", "symbol", "tex", "tex-ini-files", "texlive-scripts", "texlive.infra", "threeparttable", "threeparttablex", "times", "tipa", "tools", "trimspaces", "ulem", "unicode-data", "unicode-math", "uniquecounter", "url", "varwidth", "vruler", "wrapfig", "xcolor", "xetex", "xetexconfig", "xkeyval", "xunicode", "zapfding"))
@@ -180,3 +181,27 @@ devtools::install_github("benmarwick/wordcountaddin",
 Close and reopen RStudio so the WordCountAddin should be available under Addins.
 
 ![](images/clipboard-2078864264.png){width="310"}
+
+## Zotero
+
+Zotero is a free reference and bibliography manager, just like *Mendley* and others.
+
+You can use Zotero to organize your papers, and to create automatic in-line citations and references.
+
+To **download**, please visit <https://www.zotero.org/download/> and select you operating system.
+
+You may need to register for a free account at <https://www.zotero.org/user/register>
+
+### Shared libraries
+
+An interest thing in Zotero is that you can share a bibliography collection with others, for instance your research group or lab, and even those collections can be divided in sub-folders.
+And in that case, you can benefit from the readings of your colleagues.
+
+See the [U-Shift Zotero collection](https://www.zotero.org/groups/4625639/u-shift/library), for instance.:
+
+[![](images/clipboard-4116483569.png)](https://www.zotero.org/groups/4625639/u-shift/library)
+
+::: {.callout-note appearance="simple"}
+Keep in mind that automatic fields of references **may need some adjustments**.
+Always double check if the fields seem to be correct.
+:::
