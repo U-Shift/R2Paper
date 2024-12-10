@@ -1,5 +1,5 @@
 ---
-title: "Setup a paper with styles"
+title: "Using rticles template"
 author: "R Félix"
 ---
 

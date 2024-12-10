@@ -22,7 +22,17 @@ book:
     - tips.qmd
     - about.qmd
     - references.qmd
+  
+  output-file: "R2Paper_2024"
     
+  favicon: /images/favicon.png
+  sidebar:
+    tools:
+      - icon: download
+        href: https://github.com/U-Shift/R2Paper/releases/download/latest/R2Paper_2024.pdf
+        text: "Download PDF"
+        target: _blank
+        
   page-footer:
     left: "R Félix"
     center: "Research Methodologies"
@@ -42,6 +52,7 @@ format:
     
   # pdf:
   #   documentclass: scrreprt
+
 
 bibliography: references.bib
 
