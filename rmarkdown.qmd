@@ -43,7 +43,9 @@ See more at: <https://rmarkdown.rstudio.com/lesson-1.html> or @xie2018r .
 
 2.  Have a look at the template example and leave it as it is.
 
-3.  Knit the document (click "Knit" in RStudio) to generate an output in the desired format.
+3.  Save your new `.Rmd`
+
+4.  Knit the document (click "Knit" in RStudio) to generate an output in the desired format.
 
 Now, change it to pdf_document in the yaml
 
@@ -51,4 +53,9 @@ Now, change it to pdf_document in the yaml
 output: pdf_document
 ```
 
-Open the ourput pdf.
+::: {.callout-warning appearance="simple"}
+It may take a while for the first time in your computer, due to the `tlmgr` packages it needs.\
+The next times will be smoother!
+:::
+
+Open the output pdf.
