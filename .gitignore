@@ -47,3 +47,9 @@ po/*~
 
 # RStudio Connect folder
 rsconnect/
+
+# annoying redereing files
+/.quarto/
+_book/
+_freeze/
+rjavaenv/
