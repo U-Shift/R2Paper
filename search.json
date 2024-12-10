@@ -1,0 +1,132 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "A guide to writing a scientific paper using R",
+    "section": "",
+    "text": "Materials for the practical module A guide to writing a scientific paper using R, of the Research Methodologies in Natural and Social Sciences course of the PhD in Transport Systems at IST-ULisboa.\n\n \n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\nNote\n\n\n\nThis website was totally written in R using Quarto.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Home</span>"
+    ]
+  },
+  {
+    "objectID": "software.html",
+    "href": "software.html",
+    "title": "2  Software",
+    "section": "",
+    "text": "2.1 R\nR or R stats (how it is also known) is a programming language and free software environment for statistical computing and graphics supported by the R Foundation for Statistical Computing.\nThe download links live at The Comprehensive R Archive Network (aka CRAN). The most recent version is 4.4.1, but you can use &gt;= 4.1.x if you already have it installed.\nAfter this installation, you don’t need to open R base. Please proceed to install RStudio.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Software</span>"
+    ]
+  },
+  {
+    "objectID": "software.html#r",
+    "href": "software.html#r",
+    "title": "2  Software",
+    "section": "",
+    "text": "WindowsMacUbuntu\n\n\nDownload R-4.4.2 for Windows and run the executable file.\n\n\n\n\n\n\nImportant\n\n\n\nYou will also need to install Rtools, which is a collection of tools necessary to build R packages in Windows.\nSelect the second link if you use an ARM processor (more recent), and the first link otherwise.\n\n\n\n\nDownload R-4.4.2 for MacOX. You will have to choose between the arm64 or the x86-64 version.\nDownload the .pkg file and install it as usual.\n\n\n\nThese are instructions for Ubuntu. If you use other linux distribution, please follow the instructions on The Comprehensive R Archive Network - CRAN.\n\nYou can look for R in the Ubuntu Software Center or install it via the terminal:\n\n# sudo apt update && sudo apt upgrade -y\nsudo apt install r-base\n\nOr, if you prefer, you can install the latest version of R from CRAN:\n\n# update indices\nsudo apt update -qq\n# install two helper packages we need\nsudo apt install --no-install-recommends software-properties-common dirmngr\n# add the signing key (by Michael Rutter) for these repos\nwget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sudo tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc\n# add the R 4.0 repo from CRAN -- adjust 'focal' to 'groovy' or 'bionic' as needed\nsudo add-apt-repository \"deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/\"\n\nThen run:\n\nsudo apt install r-base r-base-core r-recommended r-base-dev\n\n[Optional] To keep up-to-date r version and packages, you can follow the instructions at r2u",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Software</span>"
+    ]
+  },
+  {
+    "objectID": "software.html#rstudio",
+    "href": "software.html#rstudio",
+    "title": "2  Software",
+    "section": "2.2 RStudio",
+    "text": "2.2 RStudio\nRStudio Desktop is an integrated development environment (IDE) for R. It includes a console, syntax-highlighting editor that supports direct code execution, as well as tools for plotting, history, debugging and workspace management.\nRStudio is available for free download from Posit RStudio.\n\nWindows 10/11MacOSUbuntu\n\n\nDownload RStudio 2024.09 and run the executable file.\n\n\nDownload RStudio 2024.09 and install it as usual.\n\n\n\nThese are instructions for Ubuntu 24 / Debian 12. If you use other linux distribution, please follow the instructions on Posit RStudio.\n\nInstall it via the terminal:\n\nsudo apt install libssl-dev libclang-dev\nwget https://download1.rstudio.org/electron/jammy/amd64/rstudio-2024.09.1-394-amd64.deb\nsudo dpkg -i rstudio*\nrm -v rstudio*",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Software</span>"
+    ]
+  },
+  {
+    "objectID": "software.html#r-packages",
+    "href": "software.html#r-packages",
+    "title": "2  Software",
+    "section": "2.3 R packages",
+    "text": "2.3 R packages\nYou will need to install some packages to work with the data and scripts in this course.\nYou can install them in RStudio by searching for them in the Packages tab:\n\nor by running the following code in the console:\n\ninstall.packages(\"rticles\")\n\ninstall.packages(\"tidyverse\")\ninstall.packages(\"readxl\")\n\ninstall.packages(c(\"remotes\", \"devtools\", \"usethis\"))",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Software</span>"
+    ]
+  },
+  {
+    "objectID": "software.html#rticles",
+    "href": "software.html#rticles",
+    "title": "2  Software",
+    "section": "2.4 rticles",
+    "text": "2.4 rticles\nYou can install and use rticles from CRAN as follows:\n\ninstall.packages(\"rticles\")\n\nSee chapter 3 to setup an rticle template.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Software</span>"
+    ]
+  },
+  {
+    "objectID": "software.html#tinytex",
+    "href": "software.html#tinytex",
+    "title": "2  Software",
+    "section": "2.5 tinytex",
+    "text": "2.5 tinytex\nTo be able to export your Rmakdown document to a pdf file, you will need a LaTeX processor. tinytex is a low weight R package with the most used features of LaTeX that you can use with R.\n\n# you need to run both lines\ninstall.packages(\"tinytex\")\ntinytex::install_tinytex()\n\nTo use some LaTeX packages, you also need to install some tlmgr packages. Here is a list of the most common ones.\n\ntinytex::tlmgr_install(c(\"algorithmicx\", \"algorithms\", \"amscls\", \"amsfonts\", \"amsmath\", \"apacite\", \"appendix\", \"atbegshi\", \"atveryend\", \"auxhook\", \"babel\", \"bibtex\", \"bigintcalc\", \"bitset\", \"booktabs\", \"cm\", \"colortbl\", \"ctablestack\", \"dehyph\", \"dvipdfmx\", \"dvips\", \"ec\", \"epstopdf-pkg\", \"etex\", \"etexcmds\", \"etoolbox\", \"euenc\", \"everyshi\", \"fancyvrb\", \"filehook\", \"firstaid\", \"float\", \"fontspec\", \"framed\", \"geometry\", \"gettitlestring\", \"glyphlist\", \"graphics\", \"graphics-cfg\", \"graphics-def\", \"helvetic\", \"hycolor\", \"hyperref\", \"hyph-utf8\", \"hyphen-base\", \"iftex\", \"inconsolata\", \"infwarerr\", \"intcalc\", \"jknapltx\", \"knuth-lib\", \"kpathsea\", \"kvdefinekeys\", \"kvoptions\", \"kvsetkeys\", \"l3backend\", \"l3kernel\", \"l3packages\", \"latex\", \"latex-amsmath-dev\", \"latex-bin\", \"latex-fonts\", \"latex-tools-dev\", \"latexconfig\", \"latexmk\", \"letltxmacro\", \"listings\", \"lm\", \"lm-math\", \"ltxcmds\", \"lua-alt-getopt\", \"lua-uni-algos\", \"luahbtex\", \"lualatex-math\", \"lualibs\", \"luaotfload\", \"luatex\", \"luatexbase\", \"makecell\", \"mdwtools\", \"metafont\", \"mfware\", \"modes\", \"multirow\", \"natbib\", \"ncctools\", \"pdfescape\", \"pdflscape\", \"pdftex\", \"pdftexcmds\", \"plain\", \"psnfss\", \"refcount\", \"rerunfilecheck\", \"rsfs\", \"scheme-infraonly\", \"selnolig\", \"setspace\", \"siunitx\", \"stringenc\", \"sttools\", \"symbol\", \"tex\", \"tex-ini-files\", \"texlive-scripts\", \"texlive.infra\", \"threeparttable\", \"threeparttablex\", \"times\", \"tipa\", \"tools\", \"trimspaces\", \"ulem\", \"unicode-data\", \"unicode-math\", \"uniquecounter\", \"url\", \"varwidth\", \"vruler\", \"wrapfig\", \"xcolor\", \"xetex\", \"xetexconfig\", \"xkeyval\", \"xunicode\", \"zapfding\"))\n\ntinytex::tlmgr_update() # updates all latex pkgs\n\n\n\n\n\n\n\nNote\n\n\n\nThis may take a bit longer for the first time.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Software</span>"
+    ]
+  },
+  {
+    "objectID": "software.html#word-count-addin",
+    "href": "software.html#word-count-addin",
+    "title": "2  Software",
+    "section": "2.6 Word count addin",
+    "text": "2.6 Word count addin\nThis R package is an RStudio addin to count words and characters in text in an R markdown document. It also has a function to compute readability statistics so you can get an indication of how easy or difficult your document is to read.\nInstall with:\n\ndevtools::install_github(\"benmarwick/wordcountaddin\",\n                         type = \"source\", dependencies = TRUE)\n\nClose and reopen RStudio so the WordCountAddin should be available under Addins.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Software</span>"
+    ]
+  },
+  {
+    "objectID": "software.html#zotero",
+    "href": "software.html#zotero",
+    "title": "2  Software",
+    "section": "2.7 Zotero",
+    "text": "2.7 Zotero\nZotero is a free reference and bibliography manager, just like Mendley and others.\nYou can use Zotero to organize your papers, and to create automatic in-line citations and references.\nTo download, please visit https://www.zotero.org/download/ and select you operating system.\nYou may need to register for a free account at https://www.zotero.org/user/register\n\n2.7.1 Shared libraries\nAn interest thing in Zotero is that you can share a bibliography collection with others, for instance your research group or lab, and even those collections can be divided in sub-folders. And in that case, you can benefit from the readings of your colleagues.\nSee the U-Shift Zotero collection, for instance.:\n\n\n\n\n\n\n\nKeep in mind that automatic fields of references may need some adjustments. Always double check if the fields seem to be correct.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Software</span>"
+    ]
+  },
+  {
+    "objectID": "software.html#footnotes",
+    "href": "software.html#footnotes",
+    "title": "2  Software",
+    "section": "",
+    "text": "We will use RStudio, although if you already use other studio such as VScode, that’s also fine.↩︎",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Software</span>"
+    ]
+  },
+  {
+    "objectID": "rmarkdown.html",
+    "href": "rmarkdown.html",
+    "title": "3  Using Rmarkdown",
+    "section": "",
+    "text": "ewew",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Using Rmarkdown</span>"
+    ]
+  },
+  {
+    "objectID": "startup.html",
+    "href": "startup.html",
+    "title": "4  Setup a paper with styles",
+    "section": "",
+    "text": "We can write an academic paper using R Studio.\nYou don’t need to know everything by heart. Starting with a pre-defined template is usually the best way to go.\nSee the examples of journal’s templates at https://pkgs.rstudio.com/rticles/articles/examples.html\nTo use rticles from RStudio, you can access the templates through File -&gt; New File -&gt; R Markdown. This will open the dialog box where you can select from one of the available templates:\n\n\n\nNew R Markdown\n\n\nLet’s start by choosing the Elsevier template, and provide a name to your paper (this will also be the name of the folder).",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Setup a paper with styles</span>"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Rosa Félix\nSenior Posdoctoral Researcher and Invited Assistant Professor\nCERIS, Instituto Superior Técnico - University of Lisbon\nWebsite | Google Scholar | Twitter | GitHub | Linkedin\nShort bio\nRosa Félix is a senior post-doctoral researcher at the Instituto Superior Técnico – University of Lisbon and member of the U-Shift lab, in the Transportation Research Group of CERIS. Having a background of Urban Planning Engineering, she completed her Ph.D. in Transport Systems in 2019 at Instituto Superior Técnico (MIT Portugal program), and was a Visiting Scholar at Portland State University in 2017/18.\nRosa is an active mobility researcher, and excels in R and GIS. She is an open source and reproducible research enthusiast. Her publications include articles on cycling and behavior change, and open source code solutions to specific GIS and mobility problems. Every year, Rosa lectures a course for cycling infrastructure planning and design for practitioners, and also teaches GIS for transportation and introduction to programming for MSc course of Transportation Systems.\nRosa has worked in multiple R&D and consultancy projects with both municipalities and industry, such as the Municipality of Lisbon (2019-2022) and the Department for Transportation of Lisbon Metro (2023), in which she developed a digital tool - biclaR - to support the planning of the metropolitan cycling network, in collaboration with Institute for Transport Studies of the University of Leeds.",
+    "crumbs": [
+      "About"
+    ]
+  }
+]
