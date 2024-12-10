@@ -1,5 +1,5 @@
 ---
-title: "Using Rmarkdown"
+title: "Using R Markdown"
 author: "R Félix"
 eval: false
 ---

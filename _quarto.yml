@@ -14,7 +14,7 @@ book:
   repo-url: https://github.com/U-Shift/R2Paper
   chapters:
     - href: index.qmd
-      text: Home
+      text: Intro
     - software.qmd
     - rmarkdown.qmd
     - startup.qmd
