@@ -1,0 +1,68 @@
+---
+title: "Exercise"
+---
+
+1.  Create an R Markdown file (`.Rmd`) and select an rticles template of your choice
+
+    -   Elsevier: Transportation Research Part A
+    -   Springer: Lecture Notes in Computer Science
+    -   Transportation Research Board (TRB)
+    -   Taylor & Francis
+
+2.  Knit it first to make sure any package is missing and the output looks fine
+
+3.  Change your YAML document to include
+
+    -   Your name
+    -   Your affiliation and address
+    -   Your e-mail
+
+4.  Change your document to include the following chapters
+
+    -   Introduction
+    -   Literature review
+    -   Methods
+        -   Case Study
+        -   Data collection
+    -   Results
+    -   Conclusions
+        -   Further Research
+    -   Funding
+    -   References
+
+5.  Make the Funding and References section as unnumbered, by pithing `{.unnumbered}` after the heading title
+
+6.  Add the following to the abstract:
+
+    > Urban mobility is a critical component of sustainable city development, influencing economic productivity, social equity, and environmental sustainability.
+    > It encompasses the movement of people and goods within urban areas, integrating various modes of transportation such as walking, cycling, public transit, and private vehicles.
+    > Effective urban mobility systems aim to ensure accessibility, affordability, and efficiency while minimizing environmental impacts and addressing the diverse needs of urban populations.
+    >
+    > In recent years, the rapid pace of urbanization has introduced complex challenges, including traffic congestion, air pollution, and inequitable access to transport options.
+    > These issues disproportionately affect vulnerable populations, such as low-income residents, the elderly, and adolescents, highlighting the need for inclusive planning.
+    > The emergence of innovative technologies, such as shared mobility platforms, autonomous vehicles, and smart city solutions, offers opportunities to reimagine urban transport networks.
+    > However, successful implementation requires a balance between technological advancement, community engagement, and policy alignment.
+    >
+    > This paper explores the importance of integrating data-driven approaches, participatory planning, and sustainable policies to enhance urban mobility systems.
+    > By prioritizing multimodal transportation, reducing dependency on private vehicles, and fostering equitable access to opportunities, cities can transition toward a more sustainable and resilient future.
+
+7.  Count the words of the abstract and make sure that they are up to 200 words.
+
+8.  Include the following papers as a references in the Literature Review section:
+
+    -   <https://doi.org/10.1016/j.trd.2021.102734>
+    -   <https://doi.org/10.1201/9780203730058>
+
+9.  Include a table of contents
+
+10. Make a cross-reference before a figure (pointing in the text to see Figure 1)
+
+11. Knit your pdf!
+
+12. Number lines
+
+13. Make it a paper for review, instead of preprint
+
+14. Make it double blind
+
+15. Knit your pdf again!
