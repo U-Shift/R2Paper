@@ -5,13 +5,27 @@ eval: false
 bibliography: references.bib
 ---
 
+## Source vs. Visual mode
+
+You may want to work directly in the **Visual** mode, to "what you see is what you get", and switch to the **Source** mode for very specific code things.
+
+![Visual mode](images/clipboard-601920846.png){width="600"}
+
+![Source mode](images/clipboard-1548057668.png){width="600"}
+
+## Suggestions
+
+Type `Ctrl + /` to search for anything you want to include
+
+![](images/clipboard-3360020257.png){width="305"}
+
 ## Cross-references
 
 You can refer to sections, figures, tables, and equations in your document using the `@ref` syntax.
 
 ### With Sections
 
-You can refer to sections like this `[Section 1](#Introduction)`.
+You can refer to sections like this: `[Section 1](#Introduction)`.
 This will show as "[Section 1](#Introduction)".
 
 ### With figures
@@ -98,3 +112,13 @@ Example of a paper written in R Markdown and submitted in **pdf** and **LaTeX** 
 <https://github.com/U-Shift/biclar/blob/master/paper/PaperCEUS/PaperCEUS.Rmd>
 
 [@félix2025]
+
+## Knitr in Project vs. Document
+
+If your R Markdown (`.Rmd)` document is not in the root of your RStudio Project (`.Rproj` ) (*i.e.* - in the same folder), and if you have data or images that are in paths reffered to the project, you may want to change the knit configurations for it to work.
+
+Go to Tools \> Global options \> R Markdown
+
+In that case select *Evaluate chunks in **Project** directory.*
+
+![](images/clipboard-1427534723.png){width="463"}
