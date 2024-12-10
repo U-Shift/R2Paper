@@ -8,7 +8,7 @@
 
 <meta name="author" content="R Félix">
 
-<title>3&nbsp; Using Rmarkdown – A guide to writing a scientific paper using R</title>
+<title>3&nbsp; Using Rmarkdown – A guide to writing scientific papers using R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -55,7 +55,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -67,6 +87,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="./">
 <link href="./startup.html" rel="next">
 <link href="./software.html" rel="prev">
+<link href=".//images/favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -111,6 +132,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="citation_title" content="[3]{.chapter-number}&nbsp; [Using Rmarkdown]{.chapter-title}">
 <meta name="citation_author" content="R Félix">
 <meta name="citation_language" content="en">
+<meta name="citation_reference" content="citation_title=R markdown: The definitive guide;,citation_author=Yihui Xie;,citation_author=Joseph J Allaire;,citation_author=Garrett Grolemund;,citation_publication_date=2013;,citation_cover_date=2013;,citation_year=2013;,citation_fulltext_html_url=https://bookdown.org/yihui/rmarkdown/;">
+<meta name="citation_reference" content="citation_title=Reproducible methods for modeling combined public transport and cycling trips and associated benefits: Evidence from the biclaR tool;,citation_author=Rosa Félix;,citation_author=Filipe Moura;,citation_author=Robin Lovelace;,citation_publication_date=2025-04;,citation_cover_date=2025-04;,citation_year=2025;,citation_fulltext_html_url=http://dx.doi.org/10.1016/j.compenvurbsys.2024.102230;,citation_doi=10.1016/j.compenvurbsys.2024.102230;,citation_volume=117;,citation_language=en;,citation_journal_title=Computers, Environment and Urban Systems;">
 </head>
 
 <body class="nav-sidebar floating">
@@ -137,8 +160,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">A guide to writing a scientific paper using R</a> 
-        <div class="sidebar-tools-main">
+      <a href="./">A guide to writing scientific papers using R</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/U-Shift/R2Paper/releases/download/latest/R2Paper_2024.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF" target="_blank"><i class="bi bi-download"></i></a>
     <a href="https://github.com/U-Shift/R2Paper" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
@@ -172,7 +196,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./startup.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Setup a paper with styles</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Using rticles template</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./exercise.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Exercise</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tips.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tips with R Markdown</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -181,13 +217,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">About</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="3">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#what-is-r-markdown" id="toc-what-is-r-markdown" class="nav-link active" data-scroll-target="#what-is-r-markdown"><span class="header-section-number">3.1</span> What is R Markdown</a></li>
+  <li><a href="#how-it-works" id="toc-how-it-works" class="nav-link" data-scroll-target="#how-it-works"><span class="header-section-number">3.2</span> How it works</a></li>
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">3.3</span> Example</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -217,12 +267,75 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>ewew</p>
-<p><img src="images/clipboard-1842640045-01.png" class="img-fluid"></p>
+<section id="what-is-r-markdown" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="what-is-r-markdown"><span class="header-section-number">3.1</span> What is R Markdown</h2>
+<p>R Markdown is a file format for creating dynamic documents.</p>
+<p>It is an R extension of the popular Markdown format, commonly used for writing and formatting text on the web, and incorporates <strong>R</strong> and <strong>Python</strong> code for statistical analysis, visualizations, and data manipulation.</p>
+<p>The Rmarkdown document contains the <strong>text</strong>, the <strong>code</strong> and the <strong>results</strong> (figures, tables, or inline calculations), ensuring the <strong>analysis can be reproduced</strong>.</p>
+<p>It allows to produce different output formats from a single file to <strong>one or more</strong> formats:</p>
+<ul>
+<li><strong>HTML</strong>: Interactive and shareable reports.</li>
+<li><strong>PDF</strong>: Print-ready documents, using LaTeX.</li>
+<li><strong>Word</strong>: Editable reports <code>.docx</code>.</li>
+<li><strong>Slides</strong>: Presentation-ready content using frameworks like <code>xaringan</code> or <code>ioslides</code>.</li>
+</ul>
+</section>
+<section id="how-it-works" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="how-it-works"><span class="header-section-number">3.2</span> How it works</h2>
+<p>When you run <code>render</code>, R Markdown feeds the .Rmd file to <a href="http://yihui.name/knitr/">knitr</a>, which executes all of the code chunks and creates a new markdown (.md) document which includes the code and its output.</p>
+<p>The markdown file generated by knitr is then processed by <a href="http://pandoc.org/">pandoc</a> which is responsible for creating the finished format.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-3350666123.png" class="img-fluid figure-img"></p>
+<figcaption>Source: RStudio, PBC</figcaption>
+</figure>
+</div>
+<p>This may sound complicated, but R Markdown makes it extremely simple by encapsulating all of the above processing into a single <code>render</code> function.</p>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>See more at: <a href="https://rmarkdown.rstudio.com/lesson-1.html" class="uri">https://rmarkdown.rstudio.com/lesson-1.html</a> or <span class="citation" data-cites="xie2018r">Xie, Allaire, and Grolemund (<a href="references.html#ref-xie2018r" role="doc-biblioref">2013</a>)</span> .</p>
+</div>
+</div>
+</div>
+</section>
+<section id="example" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="example"><span class="header-section-number">3.3</span> Example</h2>
+<ol type="1">
+<li><p>Create an <code>.Rmd</code> file in RStudio, and use HTML as output.</p>
+<p><img src="images/clipboard-1842640045.png" class="img-fluid" width="360"></p>
+<p><img src="images/clipboard-2137208684.png" class="img-fluid" width="413"></p></li>
+<li><p>Have a look at the template example and leave it as it is.</p></li>
+<li><p>Save your new <code>.Rmd</code></p></li>
+<li><p>Knit the document (click “Knit” in RStudio) to generate an output in the desired format.</p></li>
+</ol>
+<p>Now, change it to pdf_document in the yaml</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> pdf_document</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-simple callout-warning">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>It may take a while for the first time in your computer, due to the <code>tlmgr</code> packages it needs.<br>
+The next times will be smoother!</p>
+</div>
+</div>
+</div>
+<p>Open the output pdf.</p>
 
 
 <!-- -->
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-xie2018r" class="csl-entry" role="listitem">
+Xie, Yihui, Joseph J Allaire, and Garrett Grolemund. 2013. <em>R Markdown: The Definitive Guide</em>. Chapman; Hall/CRC. <a href="https://bookdown.org/yihui/rmarkdown/">https://bookdown.org/yihui/rmarkdown/</a>.
+</div>
+</div>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -847,19 +960,72 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./startup.html" class="pagination-link" aria-label="Setup a paper with styles">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Setup a paper with styles</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./startup.html" class="pagination-link" aria-label="Using rticles template">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Using rticles template</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Using Rmarkdown"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "R Félix"</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>ewew</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="al">![](images/clipboard-1842640045-01.png)</span></span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Using Rmarkdown"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "R Félix"</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="an">eval:</span><span class="co"> false</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">## What is R Markdown</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>R Markdown is a file format for creating dynamic documents.</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>It is an R extension of the popular Markdown format, commonly used for writing and formatting text on the web, and incorporates **R** and **Python** code for statistical analysis, visualizations, and data manipulation.</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>The Rmarkdown document contains the **text**, the **code** and the **results** (figures, tables, or inline calculations), ensuring the **analysis can be reproduced**.</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>It allows to produce different output formats from a single file to **one or more** formats:</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**HTML**: Interactive and shareable reports.</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**PDF**: Print-ready documents, using LaTeX.</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Word**: Editable reports <span class="in">`.docx`</span>.</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Slides**: Presentation-ready content using frameworks like <span class="in">`xaringan`</span> or <span class="in">`ioslides`</span>.</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="fu">## How it works</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>When you run <span class="in">`render`</span>, R Markdown feeds the .Rmd file to <span class="co">[</span><span class="ot">knitr</span><span class="co">](http://yihui.name/knitr/)</span>, which executes all of the code chunks and creates a new markdown (.md) document which includes the code and its output.</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>The markdown file generated by knitr is then processed by <span class="co">[</span><span class="ot">pandoc</span><span class="co">](http://pandoc.org/)</span> which is responsible for creating the finished format.</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="al">![Source: RStudio, PBC](images/clipboard-3350666123.png)</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>This may sound complicated, but R Markdown makes it extremely simple by encapsulating all of the above processing into a single <span class="in">`render`</span> function.</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip appearance="simple"}</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>See more at: <span class="ot">&lt;https://rmarkdown.rstudio.com/lesson-1.html&gt;</span> or @xie2018r .</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="fu">## Example</span></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Create an <span class="in">`.Rmd`</span> file in RStudio, and use HTML as output.</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>    <span class="al">![](images/clipboard-1842640045.png)</span>{width="360"}</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>    <span class="al">![](images/clipboard-2137208684.png)</span>{width="413"}</span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>Have a look at the template example and leave it as it is.</span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>Save your new <span class="in">`.Rmd`</span></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a><span class="ss">4.  </span>Knit the document (click "Knit" in RStudio) to generate an output in the desired format.</span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>Now, change it to pdf_document in the yaml</span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a><span class="in">``` yaml</span></span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> pdf_document</span></span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>::: {.callout-warning appearance="simple"}</span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>It may take a while for the first time in your computer, due to the <span class="in">`tlmgr`</span> packages it needs.\</span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>The next times will be smoother!</span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>Open the output pdf.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">

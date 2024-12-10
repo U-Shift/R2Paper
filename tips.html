@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Rosa Félix">
+<meta name="author" content="R Félix">
 
-<title>A guide to writing scientific papers using R</title>
+<title>6&nbsp; Tips with R Markdown – A guide to writing scientific papers using R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -55,7 +55,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -65,7 +85,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./software.html" rel="next">
+<link href="./about.html" rel="next">
+<link href="./exercise.html" rel="prev">
 <link href=".//images/favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -108,8 +129,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="styles.css">
-<meta name="citation_title" content="A guide to writing scientific papers using R">
-<meta name="citation_author" content="Rosa Félix">
+<meta name="citation_title" content="[6]{.chapter-number}&nbsp; [Tips with R Markdown]{.chapter-title}">
+<meta name="citation_author" content="R Félix">
 <meta name="citation_language" content="en">
 <meta name="citation_reference" content="citation_title=R markdown: The definitive guide;,citation_author=Yihui Xie;,citation_author=Joseph J Allaire;,citation_author=Garrett Grolemund;,citation_publication_date=2013;,citation_cover_date=2013;,citation_year=2013;,citation_fulltext_html_url=https://bookdown.org/yihui/rmarkdown/;">
 <meta name="citation_reference" content="citation_title=Reproducible methods for modeling combined public transport and cycling trips and associated benefits: Evidence from the biclaR tool;,citation_author=Rosa Félix;,citation_author=Filipe Moura;,citation_author=Robin Lovelace;,citation_publication_date=2025-04;,citation_cover_date=2025-04;,citation_year=2025;,citation_fulltext_html_url=http://dx.doi.org/10.1016/j.compenvurbsys.2024.102230;,citation_doi=10.1016/j.compenvurbsys.2024.102230;,citation_volume=117;,citation_language=en;,citation_journal_title=Computers, Environment and Urban Systems;">
@@ -124,7 +145,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Home</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./tips.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tips with R Markdown</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -156,7 +177,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Home</span></span></a>
   </div>
 </li>
@@ -186,7 +207,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tips.html" class="sidebar-item-text sidebar-link">
+  <a href="./tips.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tips with R Markdown</span></span></a>
   </div>
 </li>
@@ -207,36 +228,46 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="3">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#source-vs.-visual-mode" id="toc-source-vs.-visual-mode" class="nav-link active" data-scroll-target="#source-vs.-visual-mode"><span class="header-section-number">6.1</span> Source vs.&nbsp;Visual mode</a></li>
+  <li><a href="#suggestions" id="toc-suggestions" class="nav-link" data-scroll-target="#suggestions"><span class="header-section-number">6.2</span> Suggestions</a></li>
+  <li><a href="#cross-references" id="toc-cross-references" class="nav-link" data-scroll-target="#cross-references"><span class="header-section-number">6.3</span> Cross-references</a>
+  <ul class="collapse">
+  <li><a href="#with-sections" id="toc-with-sections" class="nav-link" data-scroll-target="#with-sections"><span class="header-section-number">6.3.1</span> With Sections</a></li>
+  <li><a href="#with-figures" id="toc-with-figures" class="nav-link" data-scroll-target="#with-figures"><span class="header-section-number">6.3.2</span> With figures</a></li>
+  <li><a href="#with-tables" id="toc-with-tables" class="nav-link" data-scroll-target="#with-tables"><span class="header-section-number">6.3.3</span> With tables</a></li>
+  </ul></li>
+  <li><a href="#create-a-table-of-contents" id="toc-create-a-table-of-contents" class="nav-link" data-scroll-target="#create-a-table-of-contents"><span class="header-section-number">6.4</span> Create a table of contents</a></li>
+  <li><a href="#latex-packages" id="toc-latex-packages" class="nav-link" data-scroll-target="#latex-packages"><span class="header-section-number">6.5</span> LaTeX packages</a></li>
+  <li><a href="#converting-to-word-.doc" id="toc-converting-to-word-.doc" class="nav-link" data-scroll-target="#converting-to-word-.doc"><span class="header-section-number">6.6</span> Converting to word <code>.doc</code></a></li>
+  <li><a href="#elsevier-paper-example" id="toc-elsevier-paper-example" class="nav-link" data-scroll-target="#elsevier-paper-example"><span class="header-section-number">6.7</span> Elsevier paper example</a></li>
+  <li><a href="#knitr-in-project-vs.-document" id="toc-knitr-in-project-vs.-document" class="nav-link" data-scroll-target="#knitr-in-project-vs.-document"><span class="header-section-number">6.8</span> Knitr in Project vs.&nbsp;Document</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">A guide to writing scientific papers using R</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
-<p class="subtitle lead">Research Methodologies 2024</p>
+<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tips with R Markdown</span></h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
 </div>
 
 
-<div class="quarto-title-meta-author">
-  <div class="quarto-title-meta-heading">Author</div>
-  <div class="quarto-title-meta-heading">Affiliation</div>
-  
-    <div class="quarto-title-meta-contents">
-    <p class="author"><a href="http://www.rosafelix.bike">Rosa Félix</a> <a href="mailto:rosamfelix@tecnico.pt" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> <a href="https://orcid.org/0000-0002-5642-6006" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
-  </div>
-  <div class="quarto-title-meta-contents">
-        <p class="affiliation">
-            Instituto Superior Técnico - University of Lisbon
-          </p>
-      </div>
-  </div>
 
 <div class="quarto-title-meta">
 
-      
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>R Félix </p>
+          </div>
+  </div>
+    
   
     
   </div>
@@ -246,38 +277,127 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>
-&nbsp;
-</p>
-<p>Materials for the practical module <strong>A guide to writing a scientific paper using R</strong>, of the <a href="https://fenix.tecnico.ulisboa.pt/disciplinas/MICNCS/2024-2025/1-semestre">Research Methodologies in Natural and Social Sciences</a> course of the PhD in Transport Systems at IST-ULisboa.</p>
-<p>
-&nbsp;
-</p>
+<section id="source-vs.-visual-mode" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="source-vs.-visual-mode"><span class="header-section-number">6.1</span> Source vs.&nbsp;Visual mode</h2>
+<p>You may want to work directly in the <strong>Visual</strong> mode, to “what you see is what you get”, and switch to the <strong>Source</strong> mode for very specific code things.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/Ist-logo-01.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" width="248"></p>
+<p><img src="images/clipboard-601920846.png" class="img-fluid figure-img" width="600"></p>
+<figcaption>Visual mode</figcaption>
 </figure>
 </div>
-<p>
-&nbsp;
-</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-1548057668.png" class="img-fluid figure-img" width="600"></p>
+<figcaption>Source mode</figcaption>
+</figure>
+</div>
+</section>
+<section id="suggestions" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="suggestions"><span class="header-section-number">6.2</span> Suggestions</h2>
+<p>Type <code>Ctrl + /</code> to search for anything you want to include</p>
+<p><img src="images/clipboard-3360020257.png" class="img-fluid" width="305"></p>
+</section>
+<section id="cross-references" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="cross-references"><span class="header-section-number">6.3</span> Cross-references</h2>
+<p>You can refer to sections, figures, tables, and equations in your document using the <code>@ref</code> syntax.</p>
+<section id="with-sections" class="level3" data-number="6.3.1">
+<h3 data-number="6.3.1" class="anchored" data-anchor-id="with-sections"><span class="header-section-number">6.3.1</span> With Sections</h3>
+<p>You can refer to sections like this: <code>[Section 1](#Introduction)</code>. This will show as “<a href="#Introduction">Section 1</a>”.</p>
+</section>
+<section id="with-figures" class="level3" data-number="6.3.2">
+<h3 data-number="6.3.2" class="anchored" data-anchor-id="with-figures"><span class="header-section-number">6.3.2</span> With figures</h3>
+<p>You can refer to figures like this: <code>\@ref(fig:plot1)</code>. This will show as “Figure <a href="">1</a>”. For that, you need to add a label to the figure chunk, like this: <code>{#fig:plot1}</code>. or <code>fig.cap="\label{plot1} Caption of the plot"</code> in your r chunk.</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(cars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="with-tables" class="level3" data-number="6.3.3">
+<h3 data-number="6.3.3" class="anchored" data-anchor-id="with-tables"><span class="header-section-number">6.3.3</span> With tables</h3>
+<p>You can refer to tables like this: <code>\@ref(tab:table1)</code>. This will show as “Table <a href="">1</a>”. For that, you need to add a label to the table caption like this:</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># example with kable</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">head</span>(iris),</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">caption =</span> <span class="st">"</span><span class="sc">\\</span><span class="st">label{table1}Caption of the table"</span>, <span class="co"># label here</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">fotmat =</span> latex,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">booktabs =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-title-container flex-fill">
-Note
+<div class="callout-body-container">
+<p>You don’t need to use an ordered number, but just a name/label to your figures and tables. R markdown will handle then the order of them and provide them <strong>sequential numbering</strong>.</p>
 </div>
 </div>
-<div class="callout-body-container callout-body">
-<p>This website was totally written in R using <a href="https://quarto.org/docs/books/">Quarto</a>.</p>
 </div>
-</div>
+</section>
+</section>
+<section id="create-a-table-of-contents" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="create-a-table-of-contents"><span class="header-section-number">6.4</span> Create a table of contents</h2>
+<p>You can create a table of contents (<strong>toc</strong>) with the headings of your document, a list of tables (<strong>lot</strong>) or a list of figures (<strong>lof</strong>), simply by adding the following in the YAML:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"My Report"</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"Your Name"</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">"2024-12-10"</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> pdf_document</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">numbersections</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">number-depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">3</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="fu">lof</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="fu">lot</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="latex-packages" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="latex-packages"><span class="header-section-number">6.5</span> LaTeX packages</h2>
+<p>Sometimes, you need to use some LaTeX packages to customize your document. To use those, you can add the following in the YAML:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">preamble</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  \biboptions{authoryear}</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  \usepackage{url}</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  \usepackage{pdflscape}</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  \usepackage{float}</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  \usepackage{booktabs}</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  \usepackage{longtable}</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  \usepackage{makecell}</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  \usepackage{multirow}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="converting-to-word-.doc" class="level2" data-number="6.6">
+<h2 data-number="6.6" class="anchored" data-anchor-id="converting-to-word-.doc"><span class="header-section-number">6.6</span> Converting to word <code>.doc</code></h2>
+<p>It can be handful to convert your nice <code>.pdf</code> to a <code>.doc</code> file to send it to your supervisor, instead of a LaTeX or pdf file.</p>
+<p>To do so, you can simply open your favorite word processor and open your pdf file inside. Click OK to convert when prompt.</p>
+<p><img src="images/clipboard-1432672920.png" class="img-fluid"></p>
+<p>Make some adjustments (sometimes it requires margins, spacing or line numbers), save it as <code>.doc</code> or <code>.docx</code>, and you are ready to go!</p>
+<p>No headings, table of contents, citations, cross-references, figures, tables are missing.</p>
+</section>
+<section id="elsevier-paper-example" class="level2" data-number="6.7">
+<h2 data-number="6.7" class="anchored" data-anchor-id="elsevier-paper-example"><span class="header-section-number">6.7</span> Elsevier paper example</h2>
+<p>Example of a paper written in R Markdown and submitted in <strong>pdf</strong> and <strong>LaTeX</strong> for the Elsevier journal Computers, Environment and Urban Studies:<br>
+<a href="https://github.com/U-Shift/biclar/blob/master/paper/PaperCEUS/PaperCEUS.Rmd" class="uri">https://github.com/U-Shift/biclar/blob/master/paper/PaperCEUS/PaperCEUS.Rmd</a></p>
+<p><span class="citation" data-cites="félix2025">(<a href="references.html#ref-félix2025" role="doc-biblioref">Félix, Moura, and Lovelace 2025</a>)</span></p>
+</section>
+<section id="knitr-in-project-vs.-document" class="level2" data-number="6.8">
+<h2 data-number="6.8" class="anchored" data-anchor-id="knitr-in-project-vs.-document"><span class="header-section-number">6.8</span> Knitr in Project vs.&nbsp;Document</h2>
+<p>If your R Markdown (<code>.Rmd)</code> document is not in the root of your RStudio Project (<code>.Rproj</code> ) (<em>i.e.</em> - in the same folder), and if you have data or images that are in paths reffered to the project, you may want to change the knit configurations for it to work.</p>
+<p>Go to Tools &gt; Global options &gt; R Markdown</p>
+<p>In that case select <em>Evaluate chunks in <strong>Project</strong> directory.</em></p>
+<p><img src="images/clipboard-1427534723.png" class="img-fluid" width="463"></p>
 
 
 <!-- -->
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-félix2025" class="csl-entry" role="listitem">
+Félix, Rosa, Filipe Moura, and Robin Lovelace. 2025. <span>“Reproducible Methods for Modeling Combined Public Transport and Cycling Trips and Associated Benefits: Evidence from the biclaR Tool.”</span> <em>Computers, Environment and Urban Systems</em> 117 (April): 102230. <a href="https://doi.org/10.1016/j.compenvurbsys.2024.102230">https://doi.org/10.1016/j.compenvurbsys.2024.102230</a>.
+</div>
+</div>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -897,32 +1017,140 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./exercise.html" class="pagination-link" aria-label="Exercise">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Exercise</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./software.html" class="pagination-link" aria-label="Software">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Software</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./about.html" class="pagination-link" aria-label="About">
+        <span class="nav-page-text">About</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Use R to write a paper"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>&lt;p&gt;&nbsp;&lt;/p&gt;</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>Materials for the practical module **A guide to writing a scientific paper using R**, of the <span class="co">[</span><span class="ot">Research Methodologies in Natural and Social Sciences</span><span class="co">](https://fenix.tecnico.ulisboa.pt/disciplinas/MICNCS/2024-2025/1-semestre)</span> course of the PhD in Transport Systems at IST-ULisboa.</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>&lt;p&gt;&nbsp;&lt;/p&gt;</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="al">![](images/Ist-logo-01.jpg)</span>{fig-align="center" width="248"}</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>&lt;p&gt;&nbsp;&lt;/p&gt;</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">## Note</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>This website was totally written in R using <span class="co">[</span><span class="ot">Quarto</span><span class="co">](https://quarto.org/docs/books/)</span>.</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Tips with R Markdown"</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "R Félix"</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="an">eval:</span><span class="co"> false</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> references.bib</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">## Source vs. Visual mode</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>You may want to work directly in the **Visual** mode, to "what you see is what you get", and switch to the **Source** mode for very specific code things.</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="al">![Visual mode](images/clipboard-601920846.png)</span>{width="600"}</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="al">![Source mode](images/clipboard-1548057668.png)</span>{width="600"}</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="fu">## Suggestions</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>Type <span class="in">`Ctrl + /`</span> to search for anything you want to include</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="al">![](images/clipboard-3360020257.png)</span>{width="305"}</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="fu">## Cross-references</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>You can refer to sections, figures, tables, and equations in your document using the <span class="in">`@ref`</span> syntax.</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a><span class="fu">### With Sections</span></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>You can refer to sections like this: <span class="in">`[Section 1](#Introduction)`</span>.</span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>This will show as "<span class="co">[</span><span class="ot">Section 1</span><span class="co">](#Introduction)</span>".</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a><span class="fu">### With figures</span></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>You can refer to figures like this: <span class="in">`\@ref(fig:plot1)`</span>.</span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>This will show as "Figure <span class="co">[</span><span class="ot">1</span><span class="co">]()</span>".</span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>For that, you need to add a label to the figure chunk, like this: <span class="in">`{#fig:plot1}`</span>.</span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>or <span class="in">`fig.cap="\label{plot1} Caption of the plot"`</span> in your r chunk.</span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a><span class="in">```{r plot1, out.width="100%", fig.cap="\\label{plot1} Caption of the plot"}</span></span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a><span class="in">plot(cars)</span></span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a><span class="fu">### With tables</span></span>
+<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a>You can refer to tables like this: <span class="in">`\@ref(tab:table1)`</span>.</span>
+<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a>This will show as "Table <span class="co">[</span><span class="ot">1</span><span class="co">]()</span>".</span>
+<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a>For that, you need to add a label to the table caption like this:</span>
+<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a><span class="in">```{r table1}</span></span>
+<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a><span class="in"># example with kable</span></span>
+<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a><span class="in">knitr::kable(head(iris),</span></span>
+<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a><span class="in">             caption = "\\label{table1}Caption of the table", # label here</span></span>
+<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a><span class="in">             fotmat = latex,</span></span>
+<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a><span class="in">             booktabs = TRUE)</span></span>
+<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip appearance="simple"}</span>
+<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a>You don't need to use an ordered number, but just a name/label to your figures and tables.</span>
+<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a>R markdown will handle then the order of them and provide them **sequential numbering**.</span>
+<span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a><span class="fu">## Create a table of contents</span></span>
+<span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-63"><a href="#cb5-63" aria-hidden="true" tabindex="-1"></a>You can create a table of contents (**toc**) with the headings of your document, a list of tables (**lot**) or a list of figures (**lof**), simply by adding the following in the YAML:</span>
+<span id="cb5-64"><a href="#cb5-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-65"><a href="#cb5-65" aria-hidden="true" tabindex="-1"></a><span class="in">``` yaml</span></span>
+<span id="cb5-66"><a href="#cb5-66" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb5-67"><a href="#cb5-67" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"My Report"</span></span>
+<span id="cb5-68"><a href="#cb5-68" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"Your Name"</span></span>
+<span id="cb5-69"><a href="#cb5-69" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">"2024-12-10"</span></span>
+<span id="cb5-70"><a href="#cb5-70" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> pdf_document</span></span>
+<span id="cb5-71"><a href="#cb5-71" aria-hidden="true" tabindex="-1"></a><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb5-72"><a href="#cb5-72" aria-hidden="true" tabindex="-1"></a><span class="fu">numbersections</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb5-73"><a href="#cb5-73" aria-hidden="true" tabindex="-1"></a><span class="fu">number-depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">3</span></span>
+<span id="cb5-74"><a href="#cb5-74" aria-hidden="true" tabindex="-1"></a><span class="fu">lof</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb5-75"><a href="#cb5-75" aria-hidden="true" tabindex="-1"></a><span class="fu">lot</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb5-76"><a href="#cb5-76" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb5-77"><a href="#cb5-77" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb5-78"><a href="#cb5-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-79"><a href="#cb5-79" aria-hidden="true" tabindex="-1"></a><span class="fu">## LaTeX packages</span></span>
+<span id="cb5-80"><a href="#cb5-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-81"><a href="#cb5-81" aria-hidden="true" tabindex="-1"></a>Sometimes, you need to use some LaTeX packages to customize your document.</span>
+<span id="cb5-82"><a href="#cb5-82" aria-hidden="true" tabindex="-1"></a>To use those, you can add the following in the YAML:</span>
+<span id="cb5-83"><a href="#cb5-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-84"><a href="#cb5-84" aria-hidden="true" tabindex="-1"></a><span class="in">``` yaml</span></span>
+<span id="cb5-85"><a href="#cb5-85" aria-hidden="true" tabindex="-1"></a><span class="fu">preamble</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb5-86"><a href="#cb5-86" aria-hidden="true" tabindex="-1"></a>  \biboptions{authoryear}</span>
+<span id="cb5-87"><a href="#cb5-87" aria-hidden="true" tabindex="-1"></a>  \usepackage{url}</span>
+<span id="cb5-88"><a href="#cb5-88" aria-hidden="true" tabindex="-1"></a>  \usepackage{pdflscape}</span>
+<span id="cb5-89"><a href="#cb5-89" aria-hidden="true" tabindex="-1"></a>  \usepackage{float}</span>
+<span id="cb5-90"><a href="#cb5-90" aria-hidden="true" tabindex="-1"></a>  \usepackage{booktabs}</span>
+<span id="cb5-91"><a href="#cb5-91" aria-hidden="true" tabindex="-1"></a>  \usepackage{longtable}</span>
+<span id="cb5-92"><a href="#cb5-92" aria-hidden="true" tabindex="-1"></a>  \usepackage{makecell}</span>
+<span id="cb5-93"><a href="#cb5-93" aria-hidden="true" tabindex="-1"></a>  \usepackage{multirow}</span>
+<span id="cb5-94"><a href="#cb5-94" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb5-95"><a href="#cb5-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-96"><a href="#cb5-96" aria-hidden="true" tabindex="-1"></a><span class="fu">## Converting to word `.doc`</span></span>
+<span id="cb5-97"><a href="#cb5-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-98"><a href="#cb5-98" aria-hidden="true" tabindex="-1"></a>It can be handful to convert your nice <span class="in">`.pdf`</span> to a <span class="in">`.doc`</span> file to send it to your supervisor, instead of a LaTeX or pdf file.</span>
+<span id="cb5-99"><a href="#cb5-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-100"><a href="#cb5-100" aria-hidden="true" tabindex="-1"></a>To do so, you can simply open your favorite word processor and open your pdf file inside.</span>
+<span id="cb5-101"><a href="#cb5-101" aria-hidden="true" tabindex="-1"></a>Click OK to convert when prompt.</span>
+<span id="cb5-102"><a href="#cb5-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-103"><a href="#cb5-103" aria-hidden="true" tabindex="-1"></a><span class="al">![](images/clipboard-1432672920.png)</span></span>
+<span id="cb5-104"><a href="#cb5-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-105"><a href="#cb5-105" aria-hidden="true" tabindex="-1"></a>Make some adjustments (sometimes it requires margins, spacing or line numbers), save it as <span class="in">`.doc`</span> or <span class="in">`.docx`</span>, and you are ready to go!</span>
+<span id="cb5-106"><a href="#cb5-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-107"><a href="#cb5-107" aria-hidden="true" tabindex="-1"></a>No headings, table of contents, citations, cross-references, figures, tables are missing.</span>
+<span id="cb5-108"><a href="#cb5-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-109"><a href="#cb5-109" aria-hidden="true" tabindex="-1"></a><span class="fu">## Elsevier paper example</span></span>
+<span id="cb5-110"><a href="#cb5-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-111"><a href="#cb5-111" aria-hidden="true" tabindex="-1"></a>Example of a paper written in R Markdown and submitted in **pdf** and **LaTeX** for the Elsevier journal Computers, Environment and Urban Studies:\</span>
+<span id="cb5-112"><a href="#cb5-112" aria-hidden="true" tabindex="-1"></a><span class="ot">&lt;https://github.com/U-Shift/biclar/blob/master/paper/PaperCEUS/PaperCEUS.Rmd&gt;</span></span>
+<span id="cb5-113"><a href="#cb5-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-114"><a href="#cb5-114" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">@félix2025</span><span class="co">]</span></span>
+<span id="cb5-115"><a href="#cb5-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-116"><a href="#cb5-116" aria-hidden="true" tabindex="-1"></a><span class="fu">## Knitr in Project vs. Document</span></span>
+<span id="cb5-117"><a href="#cb5-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-118"><a href="#cb5-118" aria-hidden="true" tabindex="-1"></a>If your R Markdown (<span class="in">`.Rmd)`</span> document is not in the root of your RStudio Project (<span class="in">`.Rproj`</span> ) (*i.e.* - in the same folder), and if you have data or images that are in paths reffered to the project, you may want to change the knit configurations for it to work.</span>
+<span id="cb5-119"><a href="#cb5-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-120"><a href="#cb5-120" aria-hidden="true" tabindex="-1"></a>Go to Tools <span class="sc">\&gt;</span> Global options <span class="sc">\&gt;</span> R Markdown</span>
+<span id="cb5-121"><a href="#cb5-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-122"><a href="#cb5-122" aria-hidden="true" tabindex="-1"></a>In that case select *Evaluate chunks in **Project** directory.*</span>
+<span id="cb5-123"><a href="#cb5-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-124"><a href="#cb5-124" aria-hidden="true" tabindex="-1"></a><span class="al">![](images/clipboard-1427534723.png)</span>{width="463"}</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
