@@ -50,6 +50,7 @@ rsconnect/
 
 # annoying redereing files
 /.quarto/
+_site/
 _book/
 _freeze/
 rjavaenv/
