@@ -122,6 +122,8 @@ You can install them in RStudio by searching for them in the **Packages** tab:
 **or** by running the following code in the console:
 
 ```{r}
+install.packages("rmarkdown")
+install.packages("bookdown")
 install.packages("rticles")
 
 install.packages("tidyverse")
