@@ -3,16 +3,34 @@ title: "Using rticles template"
 author: "R Félix"
 ---
 
-We can write an academic paper using R Studio.
+We can write a reproducible academic paper using R Studio, including your data, code, results and text.
 
 You don't need to know everything by heart.
-Starting with a pre-defined template is usually the best way to go.
+Starting with a pre-defined template from [rticles package](https://pkgs.rstudio.com/rticles/) is usually the best way to go.
 
 See the examples of journal's templates at <https://pkgs.rstudio.com/rticles/articles/examples.html>
 
 To use **rticles** from RStudio, you can access the templates through `File -> New File -> R Markdown`.
-This will open the dialog box where you can select from one of the available templates:
+This will open the dialogue box where you can select from one of the available templates:
 
-![New R Markdown](https://bookdown.org/yihui/rmarkdown/images/rticles-templates.png)
+![](images/clipboard-50621533.png){width="540"}
 
-Let's start by choosing the Elsevier template, and provide a name to your paper (this will also be the name of the folder).
+Let's start by choosing the Elsevier template, and provide a name to your paper (this will also be the name of the folder), for instance "ElsevierTemplate".
+
+## Citation Style Language
+
+There are several standards to choose from when considering a Citation Style Language (**csl**).
+
+[Zotero Style Repository](https://www.zotero.org/styles) offers a extensive list with examples, organized by journal name, and scientific fields.
+
+If using a **csl**, just copy the link for the journal you are consider, and put it into your yaml[^startup-1].
+
+[^startup-1]: You may need to make `citation_package: default`.
+
+---
+cls: https://www.zotero.org/styles/transportation-research-part-d
+output: 
+  rticles::elsevier_article:
+    keep_tex: true
+    # citation_package: natbib
+---
