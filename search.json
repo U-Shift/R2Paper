@@ -133,8 +133,8 @@
     "text": "Create an R Markdown file (.Rmd) and select an rticles template of your choice:\n\nElsevier: Transportation Research Part A\nSpringer: Lecture Notes in Computer Science\nTransportation Research Board (TRB)\nTaylor & Francis\n\nKnit it first to make sure any package is missing and the output looks fine\nChange your YAML document to include\n\nYour name\nYour affiliation and address\nYour e-mail\n\nChange your document to include the following chapters, using ## headings\n\nIntroduction\nLiterature review\nMethods\n\nCase Study\nData collection\n\nResults\nConclusions\n\nFurther Research\n\nFunding\nReferences\n\nMake the Funding and References section as unnumbered, by putting {.unnumbered} after the heading title\nAdd the following to the abstract:\n\nUrban mobility is a critical component of sustainable city development, influencing economic productivity, social equity, and environmental sustainability. It encompasses the movement of people and goods within urban areas, integrating various modes of transportation such as walking, cycling, public transit, and private vehicles. Effective urban mobility systems aim to ensure accessibility, affordability, and efficiency while minimizing environmental impacts and addressing the diverse needs of urban populations.\nIn recent years, the rapid pace of urbanization has introduced complex challenges, including traffic congestion, air pollution, and inequitable access to transport options. These issues disproportionately affect vulnerable populations, such as low-income residents, the elderly, and adolescents, highlighting the need for inclusive planning. The emergence of innovative technologies, such as shared mobility platforms, autonomous vehicles, and smart city solutions, offers opportunities to reimagine urban transport networks. However, successful implementation requires a balance between technological advancement, community engagement, and policy alignment.\nThis paper explores the importance of integrating data-driven approaches, participatory planning, and sustainable policies to enhance urban mobility systems. By prioritizing multimodal transportation, reducing dependency on private vehicles, and fostering equitable access to opportunities, cities can transition toward a more sustainable and resilient future.\n\nCount the words of the abstract and make sure that they are up to 200 words, using WordcountAddin.\nInclude the following papers as a references in the Literature Review section:\n\nhttps://doi.org/10.1016/j.trd.2021.102734\nhttps://doi.org/10.1201/9780203730058\n\nInclude a table of contents\nMake a cross-reference before a figure (pointing in the text to see Figure 1)\nKnit your pdf!\nNumber lines (linenumbers: true)\nMake it a paper for review, instead of preprint\nMake it doubleblind in classoption\nChange the biblio-style to elsarticle-num (you may need to remove authoryear from classoption)\nColor your citations in text\nKnit your pdf again!"
   },
   {
-    "objectID": "tips.html#source-vs.-visual-mode",
-    "href": "tips.html#source-vs.-visual-mode",
+    "objectID": "tips.html#sourcevisual",
+    "href": "tips.html#sourcevisual",
     "title": "6  Tips with R Markdown",
     "section": "6.1 Source vs. Visual mode",
     "text": "6.1 Source vs. Visual mode\nYou may want to work directly in the Visual mode, to “what you see is what you get”, and switch to the Source mode for very specific code things.\n\n\n\nSource mode\n\n\n\n\n\nVisual mode"
@@ -172,11 +172,11 @@
     "href": "tips.html#inline-math",
     "title": "6  Tips with R Markdown",
     "section": "6.6 Inline math",
-    "text": "6.6 Inline math\nYou can use your results along the text, so every time you run the document, the results are also updated. Example:\nResults show that 71.1268877% of the population uses car as a main mode of transport. 3+2 = 5 is a nice number.\nThis is how you would write it:\nResults show that 9.9778973 % of the population uses car as a main mode of transport. 3+2 = 5 is a nice number.\nYou can directly call your previously set variables."
+    "text": "6.6 Inline math\nYou can use your results along the text, so every time you run the document, the results are also updated. Example:\nResults show that 96.1559172% of the population uses car as a main mode of transport. 3+2 = 5 is a nice number.\nThis is how you would write it:\nResults show that 19.4002806 % of the population uses car as a main mode of transport. 3+2 = 5 is a nice number.\nYou can directly call your previously set variables."
   },
   {
-    "objectID": "tips.html#latex-packages",
-    "href": "tips.html#latex-packages",
+    "objectID": "tips.html#latexpkgs",
+    "href": "tips.html#latexpkgs",
     "title": "6  Tips with R Markdown",
     "section": "6.7 LaTeX packages",
     "text": "6.7 LaTeX packages\nSometimes, you need to use some LaTeX packages to customize your document. To use those, you can add the following in the YAML:\npreamble: |\n  \\biboptions{authoryear}\n  \\usepackage{url}\n  \\usepackage{pdflscape}\n  \\usepackage{float}\n  \\usepackage{booktabs}\n  \\usepackage{longtable}\n  \\usepackage{makecell}\n  \\usepackage{multirow}"
@@ -196,32 +196,39 @@
     "text": "6.9 Change colors of references and links\nTo color your references and urls you can add the following to your yaml:\n---\nlink-citations: true\nlinkcolor: teal\nurlcolor: teal\n---"
   },
   {
+    "objectID": "tips.html#add-a-landscape-page",
+    "href": "tips.html#add-a-landscape-page",
+    "title": "6  Tips with R Markdown",
+    "section": "6.10 Add a landscape page",
+    "text": "6.10 Add a landscape page\nTo include a landscape page in your pdf, for instance to present a very large table, you should use the \\usepackage{lscape} in your yaml preamble, and add the following code in Source mode, before and after your table chunk:\n\\begin{landscape}\n\nYour code to make a large table\n\n\\end{landscape}"
+  },
+  {
     "objectID": "tips.html#converting-to-word-.doc",
     "href": "tips.html#converting-to-word-.doc",
     "title": "6  Tips with R Markdown",
-    "section": "6.10 Converting to word .doc",
-    "text": "6.10 Converting to word .doc\nIt can be handful to convert your nice .pdf to a .doc file to send it to your supervisor, instead of a LaTeX or pdf file.\nTo do so, you can simply open your favorite word processor and open your pdf file inside. Click OK to convert when prompt.\n\n\n\nExample of this pdf book opened in MS Word\n\n\nMake some adjustments (sometimes it requires margins, spacing or line numbers), save it as .doc or .docx, and you are ready to go!\nNo headings, table of contents, citations, cross-references, figures, tables are missing."
+    "section": "6.11 Converting to word .doc",
+    "text": "6.11 Converting to word .doc\nIt can be handful to convert your nice .pdf to a .doc file to send it to your supervisor, instead of a LaTeX or pdf file.\nTo do so, you can simply open your favorite word processor and open your pdf file inside. Click OK to convert when prompt.\n\n\n\nExample of this pdf book opened in MS Word\n\n\nMake some adjustments (sometimes it requires margins, spacing or line numbers), save it as .doc or .docx, and you are ready to go!\nNo headings, table of contents, citations, cross-references, figures, tables are missing."
   },
   {
     "objectID": "tips.html#elsevier-paper-example",
     "href": "tips.html#elsevier-paper-example",
     "title": "6  Tips with R Markdown",
-    "section": "6.11 Elsevier paper example",
-    "text": "6.11 Elsevier paper example\nExample of a paper written in R Markdown and submitted in pdf and LaTeX for the Elsevier journal Computers, Environment and Urban Studies:\nhttps://github.com/U-Shift/biclar/blob/master/paper/PaperCEUS/PaperCEUS.Rmd\nThis can be useful to get an idea how things work, and compare with the final result (Félix, Moura, and Lovelace 2025)."
+    "section": "6.12 Elsevier paper example",
+    "text": "6.12 Elsevier paper example\nExample of a paper written in R Markdown and submitted in pdf and LaTeX for the Elsevier journal Computers, Environment and Urban Studies:\nhttps://github.com/U-Shift/biclar/blob/master/paper/PaperCEUS/PaperCEUS.Rmd\nThis can be useful to get an idea how things work, and compare with the final result (Félix, Moura, and Lovelace 2025)."
   },
   {
     "objectID": "tips.html#knitr-in-project-vs.-document",
     "href": "tips.html#knitr-in-project-vs.-document",
     "title": "6  Tips with R Markdown",
-    "section": "6.12 Knitr in Project vs. Document",
-    "text": "6.12 Knitr in Project vs. Document\nIf your R Markdown (.Rmd) document is not in the root of your RStudio Project (.Rproj ) (i.e. - in the same folder), and if you have data or images that are in paths reffered to the project, you may want to change the knit configurations for it to work.\nGo to Tools &gt; Global options &gt; R Markdown\nIn that case select Evaluate chunks in Project directory."
+    "section": "6.13 Knitr in Project vs. Document",
+    "text": "6.13 Knitr in Project vs. Document\nIf your R Markdown (.Rmd) document is not in the root of your RStudio Project (.Rproj ) (i.e. - in the same folder), and if you have data or images that are in paths reffered to the project, you may want to change the knit configurations for it to work.\nGo to Tools &gt; Global options &gt; R Markdown\nIn that case select Evaluate chunks in Project directory."
   },
   {
     "objectID": "tips.html#source-files-when-submitting-to-a-journal",
     "href": "tips.html#source-files-when-submitting-to-a-journal",
     "title": "6  Tips with R Markdown",
-    "section": "6.13 Source Files when submitting to a journal",
-    "text": "6.13 Source Files when submitting to a journal\nUsually journals accept the latex file (.tex) along the .pdf.\nFor that, you should prepare a SourceFiles.zip including:\n\nThe LaTeX file paper.tex\nThe used bibliography references.bib\nA citation style if used transportation_research.csl\nAny images files in a img folder\nThe paper.pdf file\n\n\n\n\n\n\n\nFélix, Rosa, Filipe Moura, and Robin Lovelace. 2025. “Reproducible Methods for Modeling Combined Public Transport and Cycling Trips and Associated Benefits: Evidence from the biclaR Tool.” Computers, Environment and Urban Systems 117 (April): 102230. https://doi.org/10.1016/j.compenvurbsys.2024.102230."
+    "section": "6.14 Source Files when submitting to a journal",
+    "text": "6.14 Source Files when submitting to a journal\nUsually journals accept the latex file (.tex) along the .pdf.\nFor that, you should prepare a SourceFiles.zip including:\n\nThe LaTeX file paper.tex\nThe used bibliography references.bib\nA citation style if used transportation_research.csl\nAny images files in a img folder\nThe paper.pdf file\n\n\n\n\n\n\n\nFélix, Rosa, Filipe Moura, and Robin Lovelace. 2025. “Reproducible Methods for Modeling Combined Public Transport and Cycling Trips and Associated Benefits: Evidence from the biclaR Tool.” Computers, Environment and Urban Systems 117 (April): 102230. https://doi.org/10.1016/j.compenvurbsys.2024.102230."
   },
   {
     "objectID": "about.html#rosa-félix",
