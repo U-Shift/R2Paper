@@ -9,9 +9,9 @@ bibliography: references.bib
 
 You may want to work directly in the **Visual** mode, to "what you see is what you get", and switch to the **Source** mode for very specific code things.
 
-## ![Source mode](images/clipboard-3294062401.png){width="600"}
+![Source mode](images/clipboard-3294062401.png){width="600"}
 
-## ![Visual mode](images/clipboard-680202013.png){width="600"}
+![Visual mode](images/clipboard-680202013.png){width="600"}
 
 ## Suggestions
 
@@ -19,7 +19,7 @@ You may want to work directly in the **Visual** mode, to "what you see is what y
 
 Type `Ctrl + /` to search for anything you want to include
 
-## ![](images/clipboard-550443476.png){width="295"}
+![](images/clipboard-550443476.png){width="295"}
 
 ## Cross-references
 
@@ -78,6 +78,52 @@ lot: true
 ---
 ```
 
+## Include an image
+
+To include a image that is not produced with R or Python (for instance a methods flowchart), you can click on **insert image** in Visual mode, browse your image file, adjust the size, and provide a proper caption.
+
+If it is produced with **R** or **Py**, simply let your code do it for you.
+Example:
+
+```{r, fig.cap="A proper caption for a ggplot."}
+#| eval: true
+#| include: true
+#| message: false
+library(ggplot2)
+ggplot(mpg, aes(displ, hwy, colour = class)) + 
+  geom_point()
+```
+
+### Image position
+
+By default, LaTeX puts your images on the **top of a page**, or arranges them in order to get the minimum white spaces possible.
+That is why LaTeX documents look so nice an pretty.
+
+Nevertheless, you can force the position of your image by adding the following to your chunk: `fig.pos = "H".` Other options:
+
+-   **h**: Place the float here, i.e., approximately at the same point it occurs in the source text.
+-   **t**: Position at the top of the page (*default*)
+-   **b**: Position at the bottom of the page.
+-   **p**: Put on a special page for floats only.
+-   **!**: Override internal parameters LaTeX uses for determining “good” float positions.
+-   **H**: Place the float at precisely the location in the LaTeX code. This requires the float package (\usepackage{float}).
+
+## Inline math
+
+You can use your results along the text, so every time you run the document, the results are also updated.
+Example:
+
+Results show that `r runif(1)*100`% of the population uses car as a main mode of transport.
+3+2 = `r 3+2` is a nice number.
+
+This is how you would write it:
+
+```         
+Results show that `r runif(1)*100` % of the population uses car as a main mode of transport. 3+2 = `r 3+2` is a nice number.
+```
+
+You can directly call your previously set variables.
+
 ## LaTeX packages
 
 Sometimes, you need to use some LaTeX packages to customize your document.
@@ -93,22 +139,6 @@ preamble: |
   \usepackage{longtable}
   \usepackage{makecell}
   \usepackage{multirow}
-```
-
-## Include a image
-
-To include a image that is not produced with R or Python (for instance a methods flowchart), you can click on **insert image** in Visual mode, browse your image file, adjust the size, and provide a proper caption.
-
-If it is produced with **R** or **Py**, simply let your code do it for you.
-Example:
-
-```{r, fig.cap="A proper caption for a ggplot."}
-#| eval: true
-#| include: true
-#| message: false
-library(ggplot2)
-ggplot(mpg, aes(displ, hwy, colour = class)) + 
-  geom_point()
 ```
 
 ## Converting to word `.doc`
