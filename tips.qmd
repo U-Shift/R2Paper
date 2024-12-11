@@ -9,15 +9,17 @@ bibliography: references.bib
 
 You may want to work directly in the **Visual** mode, to "what you see is what you get", and switch to the **Source** mode for very specific code things.
 
-![Visual mode](images/clipboard-601920846.png){width="600"}
+## ![Source mode](images/clipboard-3294062401.png){width="600"}
 
-![Source mode](images/clipboard-1548057668.png){width="600"}
+## ![Visual mode](images/clipboard-680202013.png){width="600"}
 
 ## Suggestions
 
+/
+
 Type `Ctrl + /` to search for anything you want to include
 
-![](images/clipboard-3360020257.png){width="305"}
+## ![](images/clipboard-550443476.png){width="295"}
 
 ## Cross-references
 
@@ -103,7 +105,9 @@ Example:
 ```{r, fig.cap="A proper caption for a ggplot."}
 #| eval: true
 #| include: true
-ggplot2::ggplot(mpg, aes(displ, hwy, colour = class)) + 
+#| message: false
+library(ggplot2)
+ggplot(mpg, aes(displ, hwy, colour = class)) + 
   geom_point()
 ```
 
