@@ -222,7 +222,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 <ol type="1">
-<li><p>Create an R Markdown file (<code>.Rmd</code>) and select an rticles template of your choice:</p>
+<li><p>Create an R Markdown file (<code>.Rmd</code>) and select an <a href="./startup.html">rticles</a> template of your choice:</p>
 <ul>
 <li>Elsevier: Transportation Research Part A</li>
 <li>Springer: Lecture Notes in Computer Science</li>
@@ -230,7 +230,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Taylor &amp; Francis</li>
 </ul></li>
 <li><p><strong>Knit it first</strong> to make sure any package is missing and the output looks fine</p></li>
-<li><p>Change your YAML document to include</p>
+<li><p>Change your <a href="./rmarkdown.html#yaml">YAML</a> document to include</p>
 <ul>
 <li>Your name</li>
 <li>Your affiliation and address</li>
@@ -253,26 +253,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Funding</li>
 <li>References</li>
 </ul></li>
-<li><p>Make the Funding and References section as unnumbered, by pithing <code>{.unnumbered}</code> after the heading title</p></li>
+<li><p>Make the Funding and References section as unnumbered, by putting <code>{.unnumbered}</code> after the heading title</p></li>
 <li><p>Add the following to the abstract:</p>
 <blockquote class="blockquote">
 <p>Urban mobility is a critical component of sustainable city development, influencing economic productivity, social equity, and environmental sustainability. It encompasses the movement of people and goods within urban areas, integrating various modes of transportation such as walking, cycling, public transit, and private vehicles. Effective urban mobility systems aim to ensure accessibility, affordability, and efficiency while minimizing environmental impacts and addressing the diverse needs of urban populations.</p>
 <p>In recent years, the rapid pace of urbanization has introduced complex challenges, including traffic congestion, air pollution, and inequitable access to transport options. These issues disproportionately affect vulnerable populations, such as low-income residents, the elderly, and adolescents, highlighting the need for inclusive planning. The emergence of innovative technologies, such as shared mobility platforms, autonomous vehicles, and smart city solutions, offers opportunities to reimagine urban transport networks. However, successful implementation requires a balance between technological advancement, community engagement, and policy alignment.</p>
 <p>This paper explores the importance of integrating data-driven approaches, participatory planning, and sustainable policies to enhance urban mobility systems. By prioritizing multimodal transportation, reducing dependency on private vehicles, and fostering equitable access to opportunities, cities can transition toward a more sustainable and resilient future.</p>
 </blockquote></li>
-<li><p>Count the words of the abstract and make sure that they are up to 200 words.</p></li>
+<li><p>Count the words of the abstract and make sure that they are up to 200 words, using <a href="./software.html#wordcount">WordcountAddin</a>.</p></li>
 <li><p>Include the following papers as a references in the Literature Review section:</p>
 <ul>
 <li><a href="https://doi.org/10.1016/j.trd.2021.102734" class="uri">https://doi.org/10.1016/j.trd.2021.102734</a></li>
 <li><a href="https://doi.org/10.1201/9780203730058" class="uri">https://doi.org/10.1201/9780203730058</a></li>
 </ul></li>
-<li><p>Include a table of contents</p></li>
-<li><p>Make a cross-reference before a figure (pointing in the text to see Figure 1)</p></li>
+<li><p>Include a <a href="./tips.html#toc">table of contents</a></p></li>
+<li><p>Make a <a href="./tips.html#crossreference">cross-reference</a> before a figure (pointing in the text to see Figure 1)</p></li>
 <li><p><strong>Knit your pdf!</strong></p></li>
-<li><p>Number lines</p></li>
+<li><p>Number lines (linenumbers: true)</p></li>
 <li><p>Make it a paper for <code>review</code>, instead of <code>preprint</code></p></li>
-<li><p>Make it <code>doubleblind</code></p></li>
+<li><p>Make it <code>doubleblind</code> in classoption</p></li>
 <li><p>Change the biblio-style to <code>elsarticle-num</code> (you may need to remove <code>authoryear</code> from classoption)</p></li>
+<li><p><a href="./tips.html#colorurl">Color your citations</a> in text</p></li>
 <li><p><strong>Knit your pdf again!</strong></p></li>
 </ol>
 
@@ -696,7 +697,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Exercise"</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Create an R Markdown file (<span class="in">`.Rmd`</span>) and select an rticles template of your choice:</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Create an R Markdown file (<span class="in">`.Rmd`</span>) and select an <span class="co">[</span><span class="ot">rticles</span><span class="co">](startup.qmd)</span> template of your choice:</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>Elsevier: Transportation Research Part A</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>Springer: Lecture Notes in Computer Science</span>
@@ -705,7 +706,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>**Knit it first** to make sure any package is missing and the output looks fine</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>Change your YAML document to include</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>Change your <span class="co">[</span><span class="ot">YAML</span><span class="co">](rmarkdown.qmd#yaml)</span> document to include</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>Your name</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>Your affiliation and address</span>
@@ -724,7 +725,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>Funding</span>
 <span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>References</span>
 <span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="ss">5.  </span>Make the Funding and References section as unnumbered, by pithing <span class="in">`{.unnumbered}`</span> after the heading title</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="ss">5.  </span>Make the Funding and References section as unnumbered, by putting <span class="in">`{.unnumbered}`</span> after the heading title</span>
 <span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="ss">6.  </span>Add the following to the abstract:</span>
 <span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
@@ -740,28 +741,30 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="at">    &gt; This paper explores the importance of integrating data-driven approaches, participatory planning, and sustainable policies to enhance urban mobility systems.</span></span>
 <span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="at">    &gt; By prioritizing multimodal transportation, reducing dependency on private vehicles, and fostering equitable access to opportunities, cities can transition toward a more sustainable and resilient future.</span></span>
 <span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="ss">7.  </span>Count the words of the abstract and make sure that they are up to 200 words.</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="ss">7.  </span>Count the words of the abstract and make sure that they are up to 200 words, using <span class="co">[</span><span class="ot">WordcountAddin</span><span class="co">](software.qmd#wordcount)</span>.</span>
 <span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="ss">8.  </span>Include the following papers as a references in the Literature Review section:</span>
 <span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span><span class="ot">&lt;https://doi.org/10.1016/j.trd.2021.102734&gt;</span></span>
 <span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span><span class="ot">&lt;https://doi.org/10.1201/9780203730058&gt;</span></span>
 <span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a><span class="ss">9.  </span>Include a table of contents</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a><span class="ss">9.  </span>Include a <span class="co">[</span><span class="ot">table of contents</span><span class="co">](tips.qmd#toc)</span></span>
 <span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a><span class="ss">10. </span>Make a cross-reference before a figure (pointing in the text to see Figure 1)</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a><span class="ss">10. </span>Make a <span class="co">[</span><span class="ot">cross-reference</span><span class="co">](tips.qmd#crossreference)</span> before a figure (pointing in the text to see Figure 1)</span>
 <span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a><span class="ss">11. </span>**Knit your pdf!**</span>
 <span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a><span class="ss">12. </span>Number lines</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a><span class="ss">12. </span>Number lines (linenumbers: true)</span>
 <span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a><span class="ss">13. </span>Make it a paper for <span class="in">`review`</span>, instead of <span class="in">`preprint`</span></span>
 <span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a><span class="ss">14. </span>Make it <span class="in">`doubleblind`</span></span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a><span class="ss">14. </span>Make it <span class="in">`doubleblind`</span> in classoption</span>
 <span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a><span class="ss">15. </span>Change the biblio-style to <span class="in">`elsarticle-num`</span> (you may need to remove <span class="in">`authoryear`</span> from classoption)</span>
 <span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a><span class="ss">16. </span>**Knit your pdf again!**</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a><span class="ss">16. </span><span class="co">[</span><span class="ot">Color your citations</span><span class="co">](tips.qmd#colorurl)</span> in text</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a><span class="ss">17. </span>**Knit your pdf again!**</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
