@@ -2,7 +2,7 @@
 title: "Exercise"
 ---
 
-1.  Create an R Markdown file (`.Rmd`) and select an rticles template of your choice:
+1.  Create an R Markdown file (`.Rmd`) and select an [rticles](startup.qmd) template of your choice:
 
     -   Elsevier: Transportation Research Part A
     -   Springer: Lecture Notes in Computer Science
@@ -11,7 +11,7 @@ title: "Exercise"
 
 2.  **Knit it first** to make sure any package is missing and the output looks fine
 
-3.  Change your YAML document to include
+3.  Change your [YAML](rmarkdown.qmd#yaml) document to include
 
     -   Your name
     -   Your affiliation and address
@@ -30,7 +30,7 @@ title: "Exercise"
     -   Funding
     -   References
 
-5.  Make the Funding and References section as unnumbered, by pithing `{.unnumbered}` after the heading title
+5.  Make the Funding and References section as unnumbered, by putting `{.unnumbered}` after the heading title
 
 6.  Add the following to the abstract:
 
@@ -46,25 +46,27 @@ title: "Exercise"
     > This paper explores the importance of integrating data-driven approaches, participatory planning, and sustainable policies to enhance urban mobility systems.
     > By prioritizing multimodal transportation, reducing dependency on private vehicles, and fostering equitable access to opportunities, cities can transition toward a more sustainable and resilient future.
 
-7.  Count the words of the abstract and make sure that they are up to 200 words.
+7.  Count the words of the abstract and make sure that they are up to 200 words, using [WordcountAddin](software.qmd#wordcount).
 
 8.  Include the following papers as a references in the Literature Review section:
 
     -   <https://doi.org/10.1016/j.trd.2021.102734>
     -   <https://doi.org/10.1201/9780203730058>
 
-9.  Include a table of contents
+9.  Include a [table of contents](tips.qmd#toc)
 
-10. Make a cross-reference before a figure (pointing in the text to see Figure 1)
+10. Make a [cross-reference](tips.qmd#crossreference) before a figure (pointing in the text to see Figure 1)
 
 11. **Knit your pdf!**
 
-12. Number lines
+12. Number lines (linenumbers: true)
 
 13. Make it a paper for `review`, instead of `preprint`
 
-14. Make it `doubleblind`
+14. Make it `doubleblind` in classoption
 
 15. Change the biblio-style to `elsarticle-num` (you may need to remove `authoryear` from classoption)
 
-16. **Knit your pdf again!**
+16. [Color your citations](tips.qmd#colorurl) in text
+
+17. **Knit your pdf again!**

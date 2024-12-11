@@ -21,7 +21,7 @@ Type `Ctrl + /` to search for anything you want to include
 
 ![](images/clipboard-550443476.png){width="295"}
 
-## Cross-references
+## Cross-references {#crossreference}
 
 You can refer to sections, figures, tables, and equations in your document using the `@ref` syntax.
 
@@ -60,7 +60,7 @@ You don't need to use an ordered number, but just a name/label to your figures a
 R markdown will handle then the order of them and provide them **sequential numbering**.
 :::
 
-## Create a table of contents
+## Create a table of contents {#toc}
 
 You can create a table of contents (**toc**) with the headings of your document, a list of tables (**lot**) or a list of figures (**lof**), simply by adding the following in the YAML:
 
@@ -140,6 +140,32 @@ preamble: |
   \usepackage{makecell}
   \usepackage{multirow}
 ```
+
+## Awsome tables with `kbl`
+
+[kable](https://bookdown.org/yihui/rmarkdown-cookbook/kable.html) and [kableExtra](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html) allows to create pretty tables with R.
+
+```{r}
+library(kableExtra)
+cardata = mtcars[1:5, 1:6]
+
+kbl(cardata,
+    caption = "An awsome table about cars.") |>
+  kable_styling() 
+  
+```
+
+Check out the documentation for `.pdf` format: <https://haozhu233.github.io/kableExtra/awesome_table_in_pdf.pdf>
+
+## Change colors of references and links {#colorurl}
+
+To color your references and urls you can add the following to your yaml:
+
+---
+link-citations: true
+linkcolor: teal
+urlcolor: teal
+---
 
 ## Converting to word `.doc`
 

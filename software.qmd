@@ -168,7 +168,7 @@ tinytex::tlmgr_update() # updates all latex pkgs
 This may take a bit longer for the first time.
 :::
 
-## Word count addin
+## Word count addin {#wordcount}
 
 This [R package](https://github.com/benmarwick/wordcountaddin) is an [RStudio addin](https://rstudio.github.io/rstudioaddins/) to count words and characters in text in an [R markdown](http://rmarkdown.rstudio.com/) document.
 It also has a function to compute readability statistics so you can get an indication of how easy or difficult your document is to read.
