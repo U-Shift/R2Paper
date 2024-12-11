@@ -59,3 +59,36 @@ The next times will be smoother!
 :::
 
 Open the output pdf.
+
+## YAML Header
+
+Contains metadata such as the title, author, output format, and date.
+All your document settings, such as page size, table of contents, colors, and so on, live here.
+
+Example of a simple YAML header:
+
+``` yaml
+---
+title: "My Report"
+author: "Your Name"
+date: "2024-12-10"
+output: html_document
+---
+```
+
+## Using bookdown
+
+If you want to have more control of the contents of your pdf, for instance the heading numbering and figure numbering related to the heading (Figure 1.2), you may want to use **bookdown** instead of the simple `pdf_output`.
+
+``` yaml
+---
+output: 
+  bookdown::pdf_document2:
+    toc: yes
+    fig_caption: true
+---
+```
+
+::: {.callout-important appearance="simple"}
+Be aware that the yaml header is very very sensitive to **spaces** and **identations.**
+:::
