@@ -172,7 +172,7 @@
     "href": "tips.html#inline-math",
     "title": "6  Tips with R Markdown",
     "section": "6.6 Inline math",
-    "text": "6.6 Inline math\nYou can use your results along the text, so every time you run the document, the results are also updated. Example:\nResults show that 91.7919898% of the population uses car as a main mode of transport. 3+2 = 5 is a nice number.\nThis is how you would write it:\nResults show that 37.9283247 % of the population uses car as a main mode of transport. 3+2 = 5 is a nice number.\nYou can directly call your previously set variables."
+    "text": "6.6 Inline math\nYou can use your results along the text, so every time you run the document, the results are also updated. Example:\nResults show that 71.1268877% of the population uses car as a main mode of transport. 3+2 = 5 is a nice number.\nThis is how you would write it:\nResults show that 9.9778973 % of the population uses car as a main mode of transport. 3+2 = 5 is a nice number.\nYou can directly call your previously set variables."
   },
   {
     "objectID": "tips.html#latex-packages",
