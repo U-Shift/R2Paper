@@ -54,3 +54,6 @@ _site/
 _book/
 _freeze/
 rjavaenv/
+
+# examples folder
+Untitled/
