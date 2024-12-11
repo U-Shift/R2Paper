@@ -5,7 +5,7 @@ eval: false
 bibliography: references.bib
 ---
 
-## Source vs. Visual mode
+## Source vs. Visual mode {#sourcevisual}
 
 You may want to work directly in the **Visual** mode, to "what you see is what you get", and switch to the **Source** mode for very specific code things.
 
@@ -124,7 +124,7 @@ Results show that `r runif(1)*100` % of the population uses car as a main mode o
 
 You can directly call your previously set variables.
 
-## LaTeX packages
+## LaTeX packages {#latexpkgs}
 
 Sometimes, you need to use some LaTeX packages to customize your document.
 To use those, you can add the following in the YAML:
@@ -167,6 +167,18 @@ link-citations: true
 linkcolor: teal
 urlcolor: teal
 ---
+```
+
+## Add a landscape page
+
+To include a landscape page in your pdf, for instance to present a very large table, you should use the `\usepackage{lscape}` in your [yaml preamble](#latexpkgs), and add the following code in [Source mode](#sourcevisual), before and after your table chunk:
+
+```         
+\begin{landscape}
+
+Your code to make a large table
+
+\end{landscape}
 ```
 
 ## Converting to word `.doc`
