@@ -93,6 +93,20 @@ preamble: |
   \usepackage{multirow}
 ```
 
+## Include a image
+
+To include a image that is not produced with R or Python (for instance a methods flowchart), you can click on **insert image** in Visual mode, browse your image file, adjust the size, and provide a proper caption.
+
+If it is produced with **R** or **Py**, simply let your code do it for you.
+Example:
+
+```{r, fig.cap="A proper caption for a ggplot."}
+#| eval: true
+#| include: true
+ggplot2::ggplot(mpg, aes(displ, hwy, colour = class)) + 
+  geom_point()
+```
+
 ## Converting to word `.doc`
 
 It can be handful to convert your nice `.pdf` to a `.doc` file to send it to your supervisor, instead of a LaTeX or pdf file.
@@ -122,3 +136,19 @@ Go to Tools \> Global options \> R Markdown
 In that case select *Evaluate chunks in **Project** directory.*
 
 ![](images/clipboard-1427534723.png){width="463"}
+
+## Source Files when submitting to a journal
+
+Usually journals accept the latex file (`.tex`) along the .pdf.
+
+For that, you should prepare a `SourceFiles.zip` including:
+
+-   The LaTeX file `paper.tex`
+
+-   The used bibliography `references.bib`
+
+-   A citation style if used `transportation_research.csl`
+
+-   Any images files in a `img` folder
+
+-   The `paper.pdf` file
