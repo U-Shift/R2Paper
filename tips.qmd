@@ -106,7 +106,7 @@ Nevertheless, you can force the position of your image by adding the following t
 -   **b**: Position at the bottom of the page.
 -   **p**: Put on a special page for floats only.
 -   **!**: Override internal parameters LaTeX uses for determining “good” float positions.
--   **H**: Place the float at precisely the location in the LaTeX code. This requires the float package (\usepackage{float}).
+-   **H**: Place the float at precisely the location in the LaTeX code. This requires the float package (`\usepackage{float}`).
 
 ## Inline math
 
@@ -146,13 +146,13 @@ preamble: |
 [kable](https://bookdown.org/yihui/rmarkdown-cookbook/kable.html) and [kableExtra](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html) allows to create pretty tables with R.
 
 ```{r}
+#| eval: true
 library(kableExtra)
 cardata = mtcars[1:5, 1:6]
 
 kbl(cardata,
     caption = "An awsome table about cars.") |>
   kable_styling() 
-  
 ```
 
 Check out the documentation for `.pdf` format: <https://haozhu233.github.io/kableExtra/awesome_table_in_pdf.pdf>
@@ -161,11 +161,13 @@ Check out the documentation for `.pdf` format: <https://haozhu233.github.io/kabl
 
 To color your references and urls you can add the following to your yaml:
 
+``` yaml
 ---
 link-citations: true
 linkcolor: teal
 urlcolor: teal
 ---
+```
 
 ## Converting to word `.doc`
 
@@ -174,7 +176,7 @@ It can be handful to convert your nice `.pdf` to a `.doc` file to send it to you
 To do so, you can simply open your favorite word processor and open your pdf file inside.
 Click OK to convert when prompt.
 
-![](images/clipboard-1432672920.png)
+![Example of this pdf book opened in MS Word](images/clipboard-1432672920.png){fig-align="center"}
 
 Make some adjustments (sometimes it requires margins, spacing or line numbers), save it as `.doc` or `.docx`, and you are ready to go!
 
@@ -185,7 +187,7 @@ No headings, table of contents, citations, cross-references, figures, tables are
 Example of a paper written in R Markdown and submitted in **pdf** and **LaTeX** for the Elsevier journal Computers, Environment and Urban Studies:\
 <https://github.com/U-Shift/biclar/blob/master/paper/PaperCEUS/PaperCEUS.Rmd>
 
-[@félix2025]
+This can be useful to get an idea how things work, and compare with the final result [@félix2025].
 
 ## Knitr in Project vs. Document
 

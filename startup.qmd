@@ -19,7 +19,7 @@ Let's start by choosing the Elsevier template, and provide a name to your paper 
 
 ## References
 
-If you type @ a citation manager will open with the list of your collection in your zotero librarty.
+If you type \@ a citation manager will open with the list of your collection in your zotero librarty.
 
 You can use other sources by going to Insert \> Citation...
 
