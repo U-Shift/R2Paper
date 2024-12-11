@@ -13,9 +13,21 @@ See the examples of journal's templates at <https://pkgs.rstudio.com/rticles/art
 To use **rticles** from RStudio, you can access the templates through `File -> New File -> R Markdown`.
 This will open the dialogue box where you can select from one of the available templates:
 
-![](images/clipboard-50621533.png){width="540"}
+![](images/clipboard-50621533.png){fig-align="center" width="540"}
 
 Let's start by choosing the Elsevier template, and provide a name to your paper (this will also be the name of the folder), for instance "ElsevierTemplate".
+
+## References
+
+If you type @ a citation manager will open with the list of your collection in your zotero librarty.
+
+You can use other sources by going to Insert \> Citation...
+
+![](images/clipboard-3996799566.png){fig-align="center" width="256"}
+
+Use the doi (**without the** https://doi.org/ **!!**) to search for a document that is not in your zotero library, and add it to your references.bib file directly.
+
+![](images/clipboard-375686282.png)
 
 ## Citation Style Language
 
