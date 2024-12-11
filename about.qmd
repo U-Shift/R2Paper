@@ -18,4 +18,4 @@ Every year, Rosa lectures a course for cycling infrastructure planning and desig
 
 Rosa has worked in multiple R&D and consultancy projects with both municipalities and industry, such as the Municipality of Lisbon (2019-2022) and the Department for Transportation of Lisbon Metro (2023), in which she developed a digital tool - [*biclaR*](https://biclar.tmlmobilidade.pt) - to support the planning of the metropolitan cycling network, in collaboration with Institute for Transport Studies of the University of Leeds.
 
-![](images/rosa_greencap2000.jpg){fig-align="center" width="400"}
+![](images/rosa_greencap2000.jpg){fig-align="center" width="300"}
