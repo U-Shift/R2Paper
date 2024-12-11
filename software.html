@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.3.313">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="R Félix">
 
-<title>2&nbsp; Software – A guide to writing scientific papers using R</title>
+<title>A guide to writing scientific papers using R - 2&nbsp; Software</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,7 +23,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -34,7 +34,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -85,13 +85,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 50,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
-  "show-item-context": false,
+  "limit": 20,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -100,10 +94,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
-    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-submit-button-title": "Submit"
   }
 }</script>
 
@@ -122,12 +114,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./software.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Software</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./software.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Software</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -137,12 +129,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">A guide to writing scientific papers using R</a> 
         <div class="sidebar-tools-main tools-wide">
-    <a href="https://github.com/U-Shift/R2Paper/releases/download/latest/R2Paper_2024.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF" target="_blank"><i class="bi bi-download"></i></a>
+    <a href="https://github.com/U-Shift/R2Paper/releases/download/latest/R2Paper_2024.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-download"></i></a>
     <a href="https://github.com/U-Shift/R2Paper" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
@@ -158,7 +150,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Home</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Intro</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -170,7 +162,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./rmarkdown.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Using Rmarkdown</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Using R Markdown</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -206,7 +198,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="3">
@@ -250,9 +242,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
   
 
-
 </header>
-
 
 <p>In this chapter we will guide you through the installation of R, RStudio and the packages you will need for this course.</p>
 <p><strong>R</strong> and <strong>RStudio</strong><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> are separate downloads.</p>
@@ -349,12 +339,14 @@ Select the second link if you use an ARM processor (more recent), and the first 
 <p><img src="images/clipboard-812808100.png" class="img-fluid"></p>
 <p><strong>or</strong> by running the following code in the console:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"rticles"</span>)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"readxl"</span>)</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"remotes"</span>, <span class="st">"devtools"</span>, <span class="st">"usethis"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"rmarkdown"</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"bookdown"</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"rticles"</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"readxl"</span>)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"remotes"</span>, <span class="st">"devtools"</span>, <span class="st">"usethis"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="rticles" class="level2" data-number="2.4">
@@ -414,7 +406,11 @@ Note
 <h3 data-number="2.7.1" class="anchored" data-anchor-id="shared-libraries"><span class="header-section-number">2.7.1</span> Shared libraries</h3>
 <p>An interest thing in Zotero is that you can share a bibliography collection with others, for instance your research group or lab, and even those collections can be divided in sub-folders. And in that case, you can benefit from the readings of your colleagues.</p>
 <p>See the <a href="https://www.zotero.org/groups/4625639/u-shift/library">U-Shift Zotero collection</a>, for instance.:</p>
-<p><a href="https://www.zotero.org/groups/4625639/u-shift/library"><img src="images/clipboard-4116483569.png" class="img-fluid"></a></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://www.zotero.org/groups/4625639/u-shift/library"><img src="images/clipboard-4116483569.png" class="img-fluid figure-img"></a></p>
+</figure>
+</div>
 <div class="callout callout-style-simple callout-note">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -480,33 +476,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       } else {
         el.classList.add('notransition');
       }
-    }
-  }
-  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-    let newTheme = '';
-    if(darkModeDefault) {
-      newTheme = isAlternate ? baseTheme : alternateTheme;
-    } else {
-      newTheme = isAlternate ? alternateTheme : baseTheme;
-    }
-    const changeGiscusTheme = () => {
-      // From: https://github.com/giscus/giscus/issues/336
-      const sendMessage = (message) => {
-        const iframe = document.querySelector('iframe.giscus-frame');
-        if (!iframe) return;
-        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
-      }
-      sendMessage({
-        setConfig: {
-          theme: newTheme
-        }
-      });
-    }
-    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-    if (isGiscussLoaded) {
-      changeGiscusTheme();
     }
   }
   const toggleColorMode = (alternate) => {
@@ -575,15 +544,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  const darkModeDefault = false;
-  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  let localAlternateSentinel = 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
     let toAlternate = !hasAlternateSentinel();
     toggleColorMode(toAlternate);
     setStyleSentinel(toAlternate);
-    toggleGiscusIfUsed(toAlternate, darkModeDefault);
   };
   // Ensure there is a toggle, if there isn't float one in the top right
   if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -618,7 +585,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const onCopySuccess = function(e) {
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -650,29 +628,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
   });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
   const viewSource = window.document.getElementById('quarto-view-source') ||
                      window.document.getElementById('quarto-code-tools-source');
   if (viewSource) {
@@ -724,27 +680,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   if (showAllCode) {
     showAllCode.addEventListener("click", toggleCodeHandler(true));
   }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+  function tippyHover(el, contentFn) {
     const config = {
       allowHTML: true,
+      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -754,17 +693,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start',
+      placement: 'bottom-start'
     };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -776,130 +706,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
-          }
-        }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
-        }
-        return container.innerHTML
-      } else {
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(note);
-        }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
-      }
-    }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
-          }
-        } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
-          .then(res => res.text())
-          .then(html => {
-            const parser = new DOMParser();
-            const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
-            if (note !== null) {
-              const html = processXRef(id, note);
-              instance.setContent(html);
-            } 
-          }).finally(() => {
-            instance.enable();
-            instance.show();
-          });
-        }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
+      return note.innerHTML;
     });
   }
       let selectedAnnoteEl;
@@ -943,7 +750,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
-            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -969,32 +775,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1056,13 +836,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link" aria-label="Home">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Home</span></span>
+      <a href="./index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Intro</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./rmarkdown.html" class="pagination-link" aria-label="Using Rmarkdown">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Using Rmarkdown</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./rmarkdown.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Using R Markdown</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
@@ -1190,106 +970,101 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb10-132"><a href="#cb10-132" aria-hidden="true" tabindex="-1"></a>**or** by running the following code in the console:</span>
 <span id="cb10-133"><a href="#cb10-133" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-136"><a href="#cb10-136" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb10-137"><a href="#cb10-137" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"rticles"</span>)</span>
-<span id="cb10-138"><a href="#cb10-138" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-139"><a href="#cb10-139" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span>
-<span id="cb10-140"><a href="#cb10-140" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"readxl"</span>)</span>
-<span id="cb10-141"><a href="#cb10-141" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-142"><a href="#cb10-142" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"remotes"</span>, <span class="st">"devtools"</span>, <span class="st">"usethis"</span>))</span>
-<span id="cb10-143"><a href="#cb10-143" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb10-144"><a href="#cb10-144" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-145"><a href="#cb10-145" aria-hidden="true" tabindex="-1"></a><span class="fu">## rticles</span></span>
+<span id="cb10-137"><a href="#cb10-137" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"rmarkdown"</span>)</span>
+<span id="cb10-138"><a href="#cb10-138" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"bookdown"</span>)</span>
+<span id="cb10-139"><a href="#cb10-139" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"rticles"</span>)</span>
+<span id="cb10-140"><a href="#cb10-140" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-141"><a href="#cb10-141" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span>
+<span id="cb10-142"><a href="#cb10-142" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"readxl"</span>)</span>
+<span id="cb10-143"><a href="#cb10-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-144"><a href="#cb10-144" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"remotes"</span>, <span class="st">"devtools"</span>, <span class="st">"usethis"</span>))</span>
+<span id="cb10-145"><a href="#cb10-145" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb10-146"><a href="#cb10-146" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-147"><a href="#cb10-147" aria-hidden="true" tabindex="-1"></a>You can install and use **rticles** from CRAN as follows:</span>
+<span id="cb10-147"><a href="#cb10-147" aria-hidden="true" tabindex="-1"></a><span class="fu">## rticles</span></span>
 <span id="cb10-148"><a href="#cb10-148" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-151"><a href="#cb10-151" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb10-152"><a href="#cb10-152" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"rticles"</span>)</span>
-<span id="cb10-153"><a href="#cb10-153" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb10-154"><a href="#cb10-154" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-155"><a href="#cb10-155" aria-hidden="true" tabindex="-1"></a>See <span class="co">[</span><span class="ot">chapter 3</span><span class="co">](startup.qmd)</span> to setup an rticle template.</span>
+<span id="cb10-149"><a href="#cb10-149" aria-hidden="true" tabindex="-1"></a>You can install and use **rticles** from CRAN as follows:</span>
+<span id="cb10-150"><a href="#cb10-150" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-153"><a href="#cb10-153" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb10-154"><a href="#cb10-154" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"rticles"</span>)</span>
+<span id="cb10-155"><a href="#cb10-155" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb10-156"><a href="#cb10-156" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-157"><a href="#cb10-157" aria-hidden="true" tabindex="-1"></a><span class="fu">## tinytex</span></span>
+<span id="cb10-157"><a href="#cb10-157" aria-hidden="true" tabindex="-1"></a>See <span class="co">[</span><span class="ot">chapter 3</span><span class="co">](startup.qmd)</span> to setup an rticle template.</span>
 <span id="cb10-158"><a href="#cb10-158" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-159"><a href="#cb10-159" aria-hidden="true" tabindex="-1"></a>To be able to **export** your Rmakdown document to a pdf file, you will need a LaTeX processor.</span>
-<span id="cb10-160"><a href="#cb10-160" aria-hidden="true" tabindex="-1"></a><span class="in">`tinytex`</span> is a low weight R package with the most used features of LaTeX that you can use with R.</span>
-<span id="cb10-161"><a href="#cb10-161" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-164"><a href="#cb10-164" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb10-165"><a href="#cb10-165" aria-hidden="true" tabindex="-1"></a><span class="co"># you need to run both lines</span></span>
-<span id="cb10-166"><a href="#cb10-166" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tinytex"</span>)</span>
-<span id="cb10-167"><a href="#cb10-167" aria-hidden="true" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">install_tinytex</span>()</span>
-<span id="cb10-168"><a href="#cb10-168" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb10-169"><a href="#cb10-169" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-170"><a href="#cb10-170" aria-hidden="true" tabindex="-1"></a>To use some LaTeX packages, you also need to install some <span class="in">`tlmgr`</span> packages.</span>
-<span id="cb10-171"><a href="#cb10-171" aria-hidden="true" tabindex="-1"></a>Here is a list of the most common ones.</span>
-<span id="cb10-172"><a href="#cb10-172" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-175"><a href="#cb10-175" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb10-176"><a href="#cb10-176" aria-hidden="true" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">tlmgr_install</span>(<span class="fu">c</span>(<span class="st">"algorithmicx"</span>, <span class="st">"algorithms"</span>, <span class="st">"amscls"</span>, <span class="st">"amsfonts"</span>, <span class="st">"amsmath"</span>, <span class="st">"apacite"</span>, <span class="st">"appendix"</span>, <span class="st">"atbegshi"</span>, <span class="st">"atveryend"</span>, <span class="st">"auxhook"</span>, <span class="st">"babel"</span>, <span class="st">"bibtex"</span>, <span class="st">"bigintcalc"</span>, <span class="st">"bitset"</span>, <span class="st">"booktabs"</span>, <span class="st">"cm"</span>, <span class="st">"colortbl"</span>, <span class="st">"ctablestack"</span>, <span class="st">"dehyph"</span>, <span class="st">"dvipdfmx"</span>, <span class="st">"dvips"</span>, <span class="st">"ec"</span>, <span class="st">"epstopdf-pkg"</span>, <span class="st">"etex"</span>, <span class="st">"etexcmds"</span>, <span class="st">"etoolbox"</span>, <span class="st">"euenc"</span>, <span class="st">"everyshi"</span>, <span class="st">"fancyvrb"</span>, <span class="st">"filehook"</span>, <span class="st">"firstaid"</span>, <span class="st">"float"</span>, <span class="st">"fontspec"</span>, <span class="st">"framed"</span>, <span class="st">"geometry"</span>, <span class="st">"gettitlestring"</span>, <span class="st">"glyphlist"</span>, <span class="st">"graphics"</span>, <span class="st">"graphics-cfg"</span>, <span class="st">"graphics-def"</span>, <span class="st">"helvetic"</span>, <span class="st">"hycolor"</span>, <span class="st">"hyperref"</span>, <span class="st">"hyph-utf8"</span>, <span class="st">"hyphen-base"</span>, <span class="st">"iftex"</span>, <span class="st">"inconsolata"</span>, <span class="st">"infwarerr"</span>, <span class="st">"intcalc"</span>, <span class="st">"jknapltx"</span>, <span class="st">"knuth-lib"</span>, <span class="st">"kpathsea"</span>, <span class="st">"kvdefinekeys"</span>, <span class="st">"kvoptions"</span>, <span class="st">"kvsetkeys"</span>, <span class="st">"l3backend"</span>, <span class="st">"l3kernel"</span>, <span class="st">"l3packages"</span>, <span class="st">"latex"</span>, <span class="st">"latex-amsmath-dev"</span>, <span class="st">"latex-bin"</span>, <span class="st">"latex-fonts"</span>, <span class="st">"latex-tools-dev"</span>, <span class="st">"latexconfig"</span>, <span class="st">"latexmk"</span>, <span class="st">"letltxmacro"</span>, <span class="st">"listings"</span>, <span class="st">"lm"</span>, <span class="st">"lm-math"</span>, <span class="st">"ltxcmds"</span>, <span class="st">"lua-alt-getopt"</span>, <span class="st">"lua-uni-algos"</span>, <span class="st">"luahbtex"</span>, <span class="st">"lualatex-math"</span>, <span class="st">"lualibs"</span>, <span class="st">"luaotfload"</span>, <span class="st">"luatex"</span>, <span class="st">"luatexbase"</span>, <span class="st">"makecell"</span>, <span class="st">"mdwtools"</span>, <span class="st">"metafont"</span>, <span class="st">"mfware"</span>, <span class="st">"modes"</span>, <span class="st">"multirow"</span>, <span class="st">"natbib"</span>, <span class="st">"ncctools"</span>, <span class="st">"pdfescape"</span>, <span class="st">"pdflscape"</span>, <span class="st">"pdftex"</span>, <span class="st">"pdftexcmds"</span>, <span class="st">"plain"</span>, <span class="st">"psnfss"</span>, <span class="st">"refcount"</span>, <span class="st">"rerunfilecheck"</span>, <span class="st">"rsfs"</span>, <span class="st">"scheme-infraonly"</span>, <span class="st">"selnolig"</span>, <span class="st">"setspace"</span>, <span class="st">"siunitx"</span>, <span class="st">"stringenc"</span>, <span class="st">"sttools"</span>, <span class="st">"symbol"</span>, <span class="st">"tex"</span>, <span class="st">"tex-ini-files"</span>, <span class="st">"texlive-scripts"</span>, <span class="st">"texlive.infra"</span>, <span class="st">"threeparttable"</span>, <span class="st">"threeparttablex"</span>, <span class="st">"times"</span>, <span class="st">"tipa"</span>, <span class="st">"tools"</span>, <span class="st">"trimspaces"</span>, <span class="st">"ulem"</span>, <span class="st">"unicode-data"</span>, <span class="st">"unicode-math"</span>, <span class="st">"uniquecounter"</span>, <span class="st">"url"</span>, <span class="st">"varwidth"</span>, <span class="st">"vruler"</span>, <span class="st">"wrapfig"</span>, <span class="st">"xcolor"</span>, <span class="st">"xetex"</span>, <span class="st">"xetexconfig"</span>, <span class="st">"xkeyval"</span>, <span class="st">"xunicode"</span>, <span class="st">"zapfding"</span>))</span>
-<span id="cb10-177"><a href="#cb10-177" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-178"><a href="#cb10-178" aria-hidden="true" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">tlmgr_update</span>() <span class="co"># updates all latex pkgs</span></span>
-<span id="cb10-179"><a href="#cb10-179" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb10-180"><a href="#cb10-180" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-181"><a href="#cb10-181" aria-hidden="true" tabindex="-1"></a>::: {.callout-note appearance="simple"}</span>
-<span id="cb10-182"><a href="#cb10-182" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Note</span></span>
-<span id="cb10-183"><a href="#cb10-183" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-184"><a href="#cb10-184" aria-hidden="true" tabindex="-1"></a>This may take a bit longer for the first time.</span>
-<span id="cb10-185"><a href="#cb10-185" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb10-186"><a href="#cb10-186" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-187"><a href="#cb10-187" aria-hidden="true" tabindex="-1"></a><span class="fu">## Word count addin</span></span>
+<span id="cb10-159"><a href="#cb10-159" aria-hidden="true" tabindex="-1"></a><span class="fu">## tinytex</span></span>
+<span id="cb10-160"><a href="#cb10-160" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-161"><a href="#cb10-161" aria-hidden="true" tabindex="-1"></a>To be able to **export** your Rmakdown document to a pdf file, you will need a LaTeX processor.</span>
+<span id="cb10-162"><a href="#cb10-162" aria-hidden="true" tabindex="-1"></a><span class="in">`tinytex`</span> is a low weight R package with the most used features of LaTeX that you can use with R.</span>
+<span id="cb10-163"><a href="#cb10-163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-166"><a href="#cb10-166" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb10-167"><a href="#cb10-167" aria-hidden="true" tabindex="-1"></a><span class="co"># you need to run both lines</span></span>
+<span id="cb10-168"><a href="#cb10-168" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tinytex"</span>)</span>
+<span id="cb10-169"><a href="#cb10-169" aria-hidden="true" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">install_tinytex</span>()</span>
+<span id="cb10-170"><a href="#cb10-170" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb10-171"><a href="#cb10-171" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-172"><a href="#cb10-172" aria-hidden="true" tabindex="-1"></a>To use some LaTeX packages, you also need to install some <span class="in">`tlmgr`</span> packages.</span>
+<span id="cb10-173"><a href="#cb10-173" aria-hidden="true" tabindex="-1"></a>Here is a list of the most common ones.</span>
+<span id="cb10-174"><a href="#cb10-174" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-177"><a href="#cb10-177" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb10-178"><a href="#cb10-178" aria-hidden="true" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">tlmgr_install</span>(<span class="fu">c</span>(<span class="st">"algorithmicx"</span>, <span class="st">"algorithms"</span>, <span class="st">"amscls"</span>, <span class="st">"amsfonts"</span>, <span class="st">"amsmath"</span>, <span class="st">"apacite"</span>, <span class="st">"appendix"</span>, <span class="st">"atbegshi"</span>, <span class="st">"atveryend"</span>, <span class="st">"auxhook"</span>, <span class="st">"babel"</span>, <span class="st">"bibtex"</span>, <span class="st">"bigintcalc"</span>, <span class="st">"bitset"</span>, <span class="st">"booktabs"</span>, <span class="st">"cm"</span>, <span class="st">"colortbl"</span>, <span class="st">"ctablestack"</span>, <span class="st">"dehyph"</span>, <span class="st">"dvipdfmx"</span>, <span class="st">"dvips"</span>, <span class="st">"ec"</span>, <span class="st">"epstopdf-pkg"</span>, <span class="st">"etex"</span>, <span class="st">"etexcmds"</span>, <span class="st">"etoolbox"</span>, <span class="st">"euenc"</span>, <span class="st">"everyshi"</span>, <span class="st">"fancyvrb"</span>, <span class="st">"filehook"</span>, <span class="st">"firstaid"</span>, <span class="st">"float"</span>, <span class="st">"fontspec"</span>, <span class="st">"framed"</span>, <span class="st">"geometry"</span>, <span class="st">"gettitlestring"</span>, <span class="st">"glyphlist"</span>, <span class="st">"graphics"</span>, <span class="st">"graphics-cfg"</span>, <span class="st">"graphics-def"</span>, <span class="st">"helvetic"</span>, <span class="st">"hycolor"</span>, <span class="st">"hyperref"</span>, <span class="st">"hyph-utf8"</span>, <span class="st">"hyphen-base"</span>, <span class="st">"iftex"</span>, <span class="st">"inconsolata"</span>, <span class="st">"infwarerr"</span>, <span class="st">"intcalc"</span>, <span class="st">"jknapltx"</span>, <span class="st">"knuth-lib"</span>, <span class="st">"kpathsea"</span>, <span class="st">"kvdefinekeys"</span>, <span class="st">"kvoptions"</span>, <span class="st">"kvsetkeys"</span>, <span class="st">"l3backend"</span>, <span class="st">"l3kernel"</span>, <span class="st">"l3packages"</span>, <span class="st">"latex"</span>, <span class="st">"latex-amsmath-dev"</span>, <span class="st">"latex-bin"</span>, <span class="st">"latex-fonts"</span>, <span class="st">"latex-tools-dev"</span>, <span class="st">"latexconfig"</span>, <span class="st">"latexmk"</span>, <span class="st">"letltxmacro"</span>, <span class="st">"listings"</span>, <span class="st">"lm"</span>, <span class="st">"lm-math"</span>, <span class="st">"ltxcmds"</span>, <span class="st">"lua-alt-getopt"</span>, <span class="st">"lua-uni-algos"</span>, <span class="st">"luahbtex"</span>, <span class="st">"lualatex-math"</span>, <span class="st">"lualibs"</span>, <span class="st">"luaotfload"</span>, <span class="st">"luatex"</span>, <span class="st">"luatexbase"</span>, <span class="st">"makecell"</span>, <span class="st">"mdwtools"</span>, <span class="st">"metafont"</span>, <span class="st">"mfware"</span>, <span class="st">"modes"</span>, <span class="st">"multirow"</span>, <span class="st">"natbib"</span>, <span class="st">"ncctools"</span>, <span class="st">"pdfescape"</span>, <span class="st">"pdflscape"</span>, <span class="st">"pdftex"</span>, <span class="st">"pdftexcmds"</span>, <span class="st">"plain"</span>, <span class="st">"psnfss"</span>, <span class="st">"refcount"</span>, <span class="st">"rerunfilecheck"</span>, <span class="st">"rsfs"</span>, <span class="st">"scheme-infraonly"</span>, <span class="st">"selnolig"</span>, <span class="st">"setspace"</span>, <span class="st">"siunitx"</span>, <span class="st">"stringenc"</span>, <span class="st">"sttools"</span>, <span class="st">"symbol"</span>, <span class="st">"tex"</span>, <span class="st">"tex-ini-files"</span>, <span class="st">"texlive-scripts"</span>, <span class="st">"texlive.infra"</span>, <span class="st">"threeparttable"</span>, <span class="st">"threeparttablex"</span>, <span class="st">"times"</span>, <span class="st">"tipa"</span>, <span class="st">"tools"</span>, <span class="st">"trimspaces"</span>, <span class="st">"ulem"</span>, <span class="st">"unicode-data"</span>, <span class="st">"unicode-math"</span>, <span class="st">"uniquecounter"</span>, <span class="st">"url"</span>, <span class="st">"varwidth"</span>, <span class="st">"vruler"</span>, <span class="st">"wrapfig"</span>, <span class="st">"xcolor"</span>, <span class="st">"xetex"</span>, <span class="st">"xetexconfig"</span>, <span class="st">"xkeyval"</span>, <span class="st">"xunicode"</span>, <span class="st">"zapfding"</span>))</span>
+<span id="cb10-179"><a href="#cb10-179" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-180"><a href="#cb10-180" aria-hidden="true" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">tlmgr_update</span>() <span class="co"># updates all latex pkgs</span></span>
+<span id="cb10-181"><a href="#cb10-181" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb10-182"><a href="#cb10-182" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-183"><a href="#cb10-183" aria-hidden="true" tabindex="-1"></a>::: {.callout-note appearance="simple"}</span>
+<span id="cb10-184"><a href="#cb10-184" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Note</span></span>
+<span id="cb10-185"><a href="#cb10-185" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-186"><a href="#cb10-186" aria-hidden="true" tabindex="-1"></a>This may take a bit longer for the first time.</span>
+<span id="cb10-187"><a href="#cb10-187" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb10-188"><a href="#cb10-188" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-189"><a href="#cb10-189" aria-hidden="true" tabindex="-1"></a>This <span class="co">[</span><span class="ot">R package</span><span class="co">](https://github.com/benmarwick/wordcountaddin)</span> is an <span class="co">[</span><span class="ot">RStudio addin</span><span class="co">](https://rstudio.github.io/rstudioaddins/)</span> to count words and characters in text in an <span class="co">[</span><span class="ot">R markdown</span><span class="co">](http://rmarkdown.rstudio.com/)</span> document.</span>
-<span id="cb10-190"><a href="#cb10-190" aria-hidden="true" tabindex="-1"></a>It also has a function to compute readability statistics so you can get an indication of how easy or difficult your document is to read.</span>
-<span id="cb10-191"><a href="#cb10-191" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-192"><a href="#cb10-192" aria-hidden="true" tabindex="-1"></a>Install with:</span>
+<span id="cb10-189"><a href="#cb10-189" aria-hidden="true" tabindex="-1"></a><span class="fu">## Word count addin</span></span>
+<span id="cb10-190"><a href="#cb10-190" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-191"><a href="#cb10-191" aria-hidden="true" tabindex="-1"></a>This <span class="co">[</span><span class="ot">R package</span><span class="co">](https://github.com/benmarwick/wordcountaddin)</span> is an <span class="co">[</span><span class="ot">RStudio addin</span><span class="co">](https://rstudio.github.io/rstudioaddins/)</span> to count words and characters in text in an <span class="co">[</span><span class="ot">R markdown</span><span class="co">](http://rmarkdown.rstudio.com/)</span> document.</span>
+<span id="cb10-192"><a href="#cb10-192" aria-hidden="true" tabindex="-1"></a>It also has a function to compute readability statistics so you can get an indication of how easy or difficult your document is to read.</span>
 <span id="cb10-193"><a href="#cb10-193" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-196"><a href="#cb10-196" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb10-197"><a href="#cb10-197" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"benmarwick/wordcountaddin"</span>,</span>
-<span id="cb10-198"><a href="#cb10-198" aria-hidden="true" tabindex="-1"></a>                         <span class="at">type =</span> <span class="st">"source"</span>, <span class="at">dependencies =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb10-199"><a href="#cb10-199" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb10-200"><a href="#cb10-200" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-201"><a href="#cb10-201" aria-hidden="true" tabindex="-1"></a>Close and reopen RStudio so the WordCountAddin should be available under Addins.</span>
+<span id="cb10-194"><a href="#cb10-194" aria-hidden="true" tabindex="-1"></a>Install with:</span>
+<span id="cb10-195"><a href="#cb10-195" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-198"><a href="#cb10-198" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb10-199"><a href="#cb10-199" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"benmarwick/wordcountaddin"</span>,</span>
+<span id="cb10-200"><a href="#cb10-200" aria-hidden="true" tabindex="-1"></a>                         <span class="at">type =</span> <span class="st">"source"</span>, <span class="at">dependencies =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb10-201"><a href="#cb10-201" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb10-202"><a href="#cb10-202" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-203"><a href="#cb10-203" aria-hidden="true" tabindex="-1"></a><span class="al">![](images/clipboard-2078864264.png)</span>{width="310"}</span>
+<span id="cb10-203"><a href="#cb10-203" aria-hidden="true" tabindex="-1"></a>Close and reopen RStudio so the WordCountAddin should be available under Addins.</span>
 <span id="cb10-204"><a href="#cb10-204" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-205"><a href="#cb10-205" aria-hidden="true" tabindex="-1"></a><span class="fu">## Zotero</span></span>
+<span id="cb10-205"><a href="#cb10-205" aria-hidden="true" tabindex="-1"></a><span class="al">![](images/clipboard-2078864264.png)</span>{width="310"}</span>
 <span id="cb10-206"><a href="#cb10-206" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-207"><a href="#cb10-207" aria-hidden="true" tabindex="-1"></a>Zotero is a free reference and bibliography manager, just like *Mendley* and others.</span>
+<span id="cb10-207"><a href="#cb10-207" aria-hidden="true" tabindex="-1"></a><span class="fu">## Zotero</span></span>
 <span id="cb10-208"><a href="#cb10-208" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-209"><a href="#cb10-209" aria-hidden="true" tabindex="-1"></a>You can use Zotero to organize your papers, and to create automatic in-line citations and references.</span>
+<span id="cb10-209"><a href="#cb10-209" aria-hidden="true" tabindex="-1"></a>Zotero is a free reference and bibliography manager, just like *Mendley* and others.</span>
 <span id="cb10-210"><a href="#cb10-210" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-211"><a href="#cb10-211" aria-hidden="true" tabindex="-1"></a>To **download**, please visit <span class="ot">&lt;https://www.zotero.org/download/&gt;</span> and select your operating system.</span>
+<span id="cb10-211"><a href="#cb10-211" aria-hidden="true" tabindex="-1"></a>You can use Zotero to organize your papers, and to create automatic in-line citations and references.</span>
 <span id="cb10-212"><a href="#cb10-212" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-213"><a href="#cb10-213" aria-hidden="true" tabindex="-1"></a>You may need to register for a free account at <span class="ot">&lt;https://www.zotero.org/user/register&gt;</span></span>
+<span id="cb10-213"><a href="#cb10-213" aria-hidden="true" tabindex="-1"></a>To **download**, please visit <span class="ot">&lt;https://www.zotero.org/download/&gt;</span> and select your operating system.</span>
 <span id="cb10-214"><a href="#cb10-214" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-215"><a href="#cb10-215" aria-hidden="true" tabindex="-1"></a><span class="fu">### Shared libraries</span></span>
+<span id="cb10-215"><a href="#cb10-215" aria-hidden="true" tabindex="-1"></a>You may need to register for a free account at <span class="ot">&lt;https://www.zotero.org/user/register&gt;</span></span>
 <span id="cb10-216"><a href="#cb10-216" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-217"><a href="#cb10-217" aria-hidden="true" tabindex="-1"></a>An interest thing in Zotero is that you can share a bibliography collection with others, for instance your research group or lab, and even those collections can be divided in sub-folders.</span>
-<span id="cb10-218"><a href="#cb10-218" aria-hidden="true" tabindex="-1"></a>And in that case, you can benefit from the readings of your colleagues.</span>
-<span id="cb10-219"><a href="#cb10-219" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-220"><a href="#cb10-220" aria-hidden="true" tabindex="-1"></a>See the <span class="co">[</span><span class="ot">U-Shift Zotero collection</span><span class="co">](https://www.zotero.org/groups/4625639/u-shift/library)</span>, for instance.:</span>
+<span id="cb10-217"><a href="#cb10-217" aria-hidden="true" tabindex="-1"></a><span class="fu">### Shared libraries</span></span>
+<span id="cb10-218"><a href="#cb10-218" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-219"><a href="#cb10-219" aria-hidden="true" tabindex="-1"></a>An interest thing in Zotero is that you can share a bibliography collection with others, for instance your research group or lab, and even those collections can be divided in sub-folders.</span>
+<span id="cb10-220"><a href="#cb10-220" aria-hidden="true" tabindex="-1"></a>And in that case, you can benefit from the readings of your colleagues.</span>
 <span id="cb10-221"><a href="#cb10-221" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-222"><a href="#cb10-222" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="al">![](images/clipboard-4116483569.png)</span><span class="co">](https://www.zotero.org/groups/4625639/u-shift/library)</span></span>
+<span id="cb10-222"><a href="#cb10-222" aria-hidden="true" tabindex="-1"></a>See the <span class="co">[</span><span class="ot">U-Shift Zotero collection</span><span class="co">](https://www.zotero.org/groups/4625639/u-shift/library)</span>, for instance.:</span>
 <span id="cb10-223"><a href="#cb10-223" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-224"><a href="#cb10-224" aria-hidden="true" tabindex="-1"></a>::: {.callout-note appearance="simple"}</span>
-<span id="cb10-225"><a href="#cb10-225" aria-hidden="true" tabindex="-1"></a>Keep in mind that automatic fields of references **may need some adjustments**.</span>
-<span id="cb10-226"><a href="#cb10-226" aria-hidden="true" tabindex="-1"></a>Always double check if the fields seem to be correct.</span>
-<span id="cb10-227"><a href="#cb10-227" aria-hidden="true" tabindex="-1"></a>:::</span>
-</code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb10-224"><a href="#cb10-224" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="al">![](images/clipboard-4116483569.png)</span><span class="co">](https://www.zotero.org/groups/4625639/u-shift/library)</span></span>
+<span id="cb10-225"><a href="#cb10-225" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-226"><a href="#cb10-226" aria-hidden="true" tabindex="-1"></a>::: {.callout-note appearance="simple"}</span>
+<span id="cb10-227"><a href="#cb10-227" aria-hidden="true" tabindex="-1"></a>Keep in mind that automatic fields of references **may need some adjustments**.</span>
+<span id="cb10-228"><a href="#cb10-228" aria-hidden="true" tabindex="-1"></a>Always double check if the fields seem to be correct.</span>
+<span id="cb10-229"><a href="#cb10-229" aria-hidden="true" tabindex="-1"></a>:::</span>
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">
-<p>R Félix</p>
-</div>   
-    <div class="nav-footer-center">
-<p>Research Methodologies</p>
-</div>
-    <div class="nav-footer-right">
-<p>December 2024</p>
-</div>
+    <div class="nav-footer-left">R Félix</div>   
+    <div class="nav-footer-center">Research Methodologies</div>
+    <div class="nav-footer-right">December 2024</div>
   </div>
 </footer>
-
 
 
 
