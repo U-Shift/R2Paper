@@ -65,4 +65,6 @@ title: "Exercise"
 
 14. Make it `doubleblind`
 
-15. **Knit your pdf again!**
+15. Change the biblio-style to `elsarticle-num` (you may need to remove `authoryear` from classoption)
+
+16. **Knit your pdf again!**
