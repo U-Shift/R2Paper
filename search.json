@@ -4,244 +4,379 @@
     "href": "index.html",
     "title": "A guide to writing scientific papers using R",
     "section": "",
-    "text": "Materials for the practical module A guide to writing a scientific paper using R, of the Research Methodologies in Natural and Social Sciences course of the PhD in Transport Systems at IST-ULisboa.\n\n \n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\nNote\n\n\n\nThis website was totally written in R using Quarto."
+    "text": "Materials for the practical module A guide to writing a scientific paper using R, of the Research Methodologies in Natural and Social Sciences course of the PhD in Transport Systems at IST-ULisboa.\n\n \n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\nNote\n\n\n\nThis website was totally written in R using Quarto.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Intro</span>"
+    ]
+  },
+  {
+    "objectID": "software.html",
+    "href": "software.html",
+    "title": "2  Software",
+    "section": "",
+    "text": "2.1 R\nR or R stats (how it is also known) is a programming language and free software environment for statistical computing and graphics supported by the R Foundation for Statistical Computing.\nThe download links live at The Comprehensive R Archive Network (aka CRAN). The most recent version is 4.4.1, but you can use &gt;= 4.1.x if you already have it installed.\nAfter this installation, you don’t need to open R base. Please proceed to install RStudio.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Software</span>"
+    ]
   },
   {
     "objectID": "software.html#r",
     "href": "software.html#r",
     "title": "2  Software",
-    "section": "2.1 R",
-    "text": "2.1 R\nR or R stats (how it is also known) is a programming language and free software environment for statistical computing and graphics supported by the R Foundation for Statistical Computing.\nThe download links live at The Comprehensive R Archive Network (aka CRAN). The most recent version is 4.4.1, but you can use &gt;= 4.1.x if you already have it installed.\n\nWindowsMacUbuntu\n\n\nDownload R-4.4.2 for Windows and run the executable file.\n\n\n\n\n\n\nImportant\n\n\n\nYou will also need to install Rtools, which is a collection of tools necessary to build R packages in Windows.\nSelect the second link if you use an ARM processor (more recent), and the first link otherwise.\n\n\n\n\nDownload R-4.4.2 for MacOX. You will have to choose between the arm64 or the x86-64 version.\nDownload the .pkg file and install it as usual.\n\n\n\nThese are instructions for Ubuntu. If you use other linux distribution, please follow the instructions on The Comprehensive R Archive Network - CRAN.\n\nYou can look for R in the Ubuntu Software Center or install it via the terminal:\n\n# sudo apt update && sudo apt upgrade -y\nsudo apt install r-base\n\nOr, if you prefer, you can install the latest version of R from CRAN:\n\n# update indices\nsudo apt update -qq\n# install two helper packages we need\nsudo apt install --no-install-recommends software-properties-common dirmngr\n# add the signing key (by Michael Rutter) for these repos\nwget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sudo tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc\n# add the R 4.0 repo from CRAN -- adjust 'focal' to 'groovy' or 'bionic' as needed\nsudo add-apt-repository \"deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/\"\n\nThen run:\n\nsudo apt install r-base r-base-core r-recommended r-base-dev\n\n[Optional] To keep up-to-date r version and packages, you can follow the instructions at r2u\n\n\n\nAfter this installation, you don’t need to open R base. Please proceed to install RStudio."
+    "section": "",
+    "text": "WindowsMacUbuntu\n\n\nDownload R-4.4.2 for Windows and run the executable file.\n\n\n\n\n\n\nImportant\n\n\n\nYou will also need to install Rtools, which is a collection of tools necessary to build R packages in Windows.\nSelect the second link if you use an ARM processor (more recent), and the first link otherwise.\n\n\n\n\nDownload R-4.4.2 for MacOX. You will have to choose between the arm64 or the x86-64 version.\nDownload the .pkg file and install it as usual.\n\n\n\nThese are instructions for Ubuntu. If you use other linux distribution, please follow the instructions on The Comprehensive R Archive Network - CRAN.\n\nYou can look for R in the Ubuntu Software Center or install it via the terminal:\n\n# sudo apt update && sudo apt upgrade -y\nsudo apt install r-base\n\nOr, if you prefer, you can install the latest version of R from CRAN:\n\n# update indices\nsudo apt update -qq\n# install two helper packages we need\nsudo apt install --no-install-recommends software-properties-common dirmngr\n# add the signing key (by Michael Rutter) for these repos\nwget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sudo tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc\n# add the R 4.0 repo from CRAN -- adjust 'focal' to 'groovy' or 'bionic' as needed\nsudo add-apt-repository \"deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/\"\n\nThen run:\n\nsudo apt install r-base r-base-core r-recommended r-base-dev\n\n[Optional] To keep up-to-date r version and packages, you can follow the instructions at r2u",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Software</span>"
+    ]
   },
   {
     "objectID": "software.html#rstudio",
     "href": "software.html#rstudio",
     "title": "2  Software",
     "section": "2.2 RStudio",
-    "text": "2.2 RStudio\nRStudio Desktop is an integrated development environment (IDE) for R. It includes a console, syntax-highlighting editor that supports direct code execution, as well as tools for plotting, history, debugging and workspace management.\nRStudio is available for free download from Posit RStudio.\n\nWindows 10/11MacOSUbuntu\n\n\nDownload RStudio 2024.09 and run the executable file.\n\n\nDownload RStudio 2024.09 and install it as usual.\n\n\n\nThese are instructions for Ubuntu 24 / Debian 12. If you use other linux distribution, please follow the instructions on Posit RStudio.\n\nInstall it via the terminal:\n\nsudo apt install libssl-dev libclang-dev\nwget https://download1.rstudio.org/electron/jammy/amd64/rstudio-2024.09.1-394-amd64.deb\nsudo dpkg -i rstudio*\nrm -v rstudio*"
+    "text": "2.2 RStudio\nRStudio Desktop is an integrated development environment (IDE) for R. It includes a console, syntax-highlighting editor that supports direct code execution, as well as tools for plotting, history, debugging and workspace management.\nRStudio is available for free download from Posit RStudio.\n\nWindows 10/11MacOSUbuntu\n\n\nDownload RStudio 2024.09 and run the executable file.\n\n\nDownload RStudio 2024.09 and install it as usual.\n\n\n\nThese are instructions for Ubuntu 24 / Debian 12. If you use other linux distribution, please follow the instructions on Posit RStudio.\n\nInstall it via the terminal:\n\nsudo apt install libssl-dev libclang-dev\nwget https://download1.rstudio.org/electron/jammy/amd64/rstudio-2024.09.1-394-amd64.deb\nsudo dpkg -i rstudio*\nrm -v rstudio*",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Software</span>"
+    ]
   },
   {
     "objectID": "software.html#r-packages",
     "href": "software.html#r-packages",
     "title": "2  Software",
     "section": "2.3 R packages",
-    "text": "2.3 R packages\nYou will need to install some packages to work with the data and scripts in this course.\nYou can install them in RStudio by searching for them in the Packages tab:\n\nor by running the following code in the console:\n\ninstall.packages(\"rmarkdown\")\ninstall.packages(\"bookdown\")\ninstall.packages(\"rticles\")\n\ninstall.packages(\"tidyverse\")\ninstall.packages(\"readxl\")\n\ninstall.packages(c(\"remotes\", \"devtools\", \"usethis\"))"
+    "text": "2.3 R packages\nYou will need to install some packages to work with the data and scripts in this course.\nYou can install them in RStudio by searching for them in the Packages tab:\n\nor by running the following code in the console:\n\ninstall.packages(\"rmarkdown\")\ninstall.packages(\"bookdown\")\ninstall.packages(\"rticles\")\n\ninstall.packages(\"tidyverse\")\ninstall.packages(\"readxl\")\n\ninstall.packages(c(\"remotes\", \"devtools\", \"usethis\"))",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Software</span>"
+    ]
   },
   {
     "objectID": "software.html#rticles",
     "href": "software.html#rticles",
     "title": "2  Software",
     "section": "2.4 rticles",
-    "text": "2.4 rticles\nYou can install and use rticles from CRAN as follows:\n\ninstall.packages(\"rticles\")\n\nSee chapter 3 to setup an rticle template."
+    "text": "2.4 rticles\nYou can install and use rticles from CRAN as follows:\n\ninstall.packages(\"rticles\")\n\nSee chapter 3 to setup an rticle template.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Software</span>"
+    ]
   },
   {
     "objectID": "software.html#tinytex",
     "href": "software.html#tinytex",
     "title": "2  Software",
     "section": "2.5 tinytex",
-    "text": "2.5 tinytex\nTo be able to export your Rmakdown document to a pdf file, you will need a LaTeX processor. tinytex is a low weight R package with the most used features of LaTeX that you can use with R.\n\n# you need to run both lines\ninstall.packages(\"tinytex\")\ntinytex::install_tinytex()\n\nTo use some LaTeX packages, you also need to install some tlmgr packages. Here is a list of the most common ones.\n\ntinytex::tlmgr_install(c(\"algorithmicx\", \"algorithms\", \"amscls\", \"amsfonts\", \"amsmath\", \"apacite\", \"appendix\", \"atbegshi\", \"atveryend\", \"auxhook\", \"babel\", \"bibtex\", \"bigintcalc\", \"bitset\", \"booktabs\", \"cm\", \"colortbl\", \"ctablestack\", \"dehyph\", \"dvipdfmx\", \"dvips\", \"ec\", \"epstopdf-pkg\", \"etex\", \"etexcmds\", \"etoolbox\", \"euenc\", \"everyshi\", \"fancyvrb\", \"filehook\", \"firstaid\", \"float\", \"fontspec\", \"framed\", \"geometry\", \"gettitlestring\", \"glyphlist\", \"graphics\", \"graphics-cfg\", \"graphics-def\", \"helvetic\", \"hycolor\", \"hyperref\", \"hyph-utf8\", \"hyphen-base\", \"iftex\", \"inconsolata\", \"infwarerr\", \"intcalc\", \"jknapltx\", \"knuth-lib\", \"kpathsea\", \"kvdefinekeys\", \"kvoptions\", \"kvsetkeys\", \"l3backend\", \"l3kernel\", \"l3packages\", \"latex\", \"latex-amsmath-dev\", \"latex-bin\", \"latex-fonts\", \"latex-tools-dev\", \"latexconfig\", \"latexmk\", \"letltxmacro\", \"listings\", \"lm\", \"lm-math\", \"ltxcmds\", \"lua-alt-getopt\", \"lua-uni-algos\", \"luahbtex\", \"lualatex-math\", \"lualibs\", \"luaotfload\", \"luatex\", \"luatexbase\", \"makecell\", \"mdwtools\", \"metafont\", \"mfware\", \"modes\", \"multirow\", \"natbib\", \"ncctools\", \"pdfescape\", \"pdflscape\", \"pdftex\", \"pdftexcmds\", \"plain\", \"psnfss\", \"refcount\", \"rerunfilecheck\", \"rsfs\", \"scheme-infraonly\", \"selnolig\", \"setspace\", \"siunitx\", \"stringenc\", \"sttools\", \"symbol\", \"tex\", \"tex-ini-files\", \"texlive-scripts\", \"texlive.infra\", \"threeparttable\", \"threeparttablex\", \"times\", \"tipa\", \"tools\", \"trimspaces\", \"ulem\", \"unicode-data\", \"unicode-math\", \"uniquecounter\", \"url\", \"varwidth\", \"vruler\", \"wrapfig\", \"xcolor\", \"xetex\", \"xetexconfig\", \"xkeyval\", \"xunicode\", \"zapfding\"))\n\ntinytex::tlmgr_update() # updates all latex pkgs\n\n\n\n\n\n\n\nNote\n\n\n\nThis may take a bit longer for the first time."
+    "text": "2.5 tinytex\nTo be able to export your Rmakdown document to a pdf file, you will need a LaTeX processor. tinytex is a low weight R package with the most used features of LaTeX that you can use with R.\n\n# you need to run both lines\ninstall.packages(\"tinytex\")\ntinytex::install_tinytex()\n\nTo use some LaTeX packages, you also need to install some tlmgr packages. Here is a list of the most common ones.\n\ntinytex::tlmgr_install(c(\"algorithmicx\", \"algorithms\", \"amscls\", \"amsfonts\", \"amsmath\", \"apacite\", \"appendix\", \"atbegshi\", \"atveryend\", \"auxhook\", \"babel\", \"bibtex\", \"bigintcalc\", \"bitset\", \"booktabs\", \"cm\", \"colortbl\", \"ctablestack\", \"dehyph\", \"dvipdfmx\", \"dvips\", \"ec\", \"epstopdf-pkg\", \"etex\", \"etexcmds\", \"etoolbox\", \"euenc\", \"everyshi\", \"fancyvrb\", \"filehook\", \"firstaid\", \"float\", \"fontspec\", \"framed\", \"geometry\", \"gettitlestring\", \"glyphlist\", \"graphics\", \"graphics-cfg\", \"graphics-def\", \"helvetic\", \"hycolor\", \"hyperref\", \"hyph-utf8\", \"hyphen-base\", \"iftex\", \"inconsolata\", \"infwarerr\", \"intcalc\", \"jknapltx\", \"knuth-lib\", \"kpathsea\", \"kvdefinekeys\", \"kvoptions\", \"kvsetkeys\", \"l3backend\", \"l3kernel\", \"l3packages\", \"latex\", \"latex-amsmath-dev\", \"latex-bin\", \"latex-fonts\", \"latex-tools-dev\", \"latexconfig\", \"latexmk\", \"letltxmacro\", \"listings\", \"lm\", \"lm-math\", \"ltxcmds\", \"lua-alt-getopt\", \"lua-uni-algos\", \"luahbtex\", \"lualatex-math\", \"lualibs\", \"luaotfload\", \"luatex\", \"luatexbase\", \"makecell\", \"mdwtools\", \"metafont\", \"mfware\", \"modes\", \"multirow\", \"natbib\", \"ncctools\", \"pdfescape\", \"pdflscape\", \"pdftex\", \"pdftexcmds\", \"plain\", \"psnfss\", \"refcount\", \"rerunfilecheck\", \"rsfs\", \"scheme-infraonly\", \"selnolig\", \"setspace\", \"siunitx\", \"stringenc\", \"sttools\", \"symbol\", \"tex\", \"tex-ini-files\", \"texlive-scripts\", \"texlive.infra\", \"threeparttable\", \"threeparttablex\", \"times\", \"tipa\", \"tools\", \"trimspaces\", \"ulem\", \"unicode-data\", \"unicode-math\", \"uniquecounter\", \"url\", \"varwidth\", \"vruler\", \"wrapfig\", \"xcolor\", \"xetex\", \"xetexconfig\", \"xkeyval\", \"xunicode\", \"zapfding\"))\n\ntinytex::tlmgr_update() # updates all latex pkgs\n\n\n\n\n\n\n\nNote\n\n\n\nThis may take a bit longer for the first time.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Software</span>"
+    ]
   },
   {
     "objectID": "software.html#wordcount",
     "href": "software.html#wordcount",
     "title": "2  Software",
     "section": "2.6 Word count addin",
-    "text": "2.6 Word count addin\nThis R package is an RStudio addin to count words and characters in text in an R markdown document. It also has a function to compute readability statistics so you can get an indication of how easy or difficult your document is to read.\nInstall with:\n\ndevtools::install_github(\"benmarwick/wordcountaddin\",\n                         type = \"source\", dependencies = TRUE)\n\nClose and reopen RStudio so the WordCountAddin should be available under Addins."
+    "text": "2.6 Word count addin\nThis R package is an RStudio addin to count words and characters in text in an R markdown document. It also has a function to compute readability statistics so you can get an indication of how easy or difficult your document is to read.\nInstall with:\n\ndevtools::install_github(\"benmarwick/wordcountaddin\",\n                         type = \"source\", dependencies = TRUE)\n\nClose and reopen RStudio so the WordCountAddin should be available under Addins.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Software</span>"
+    ]
   },
   {
     "objectID": "software.html#zotero",
     "href": "software.html#zotero",
     "title": "2  Software",
     "section": "2.7 Zotero",
-    "text": "2.7 Zotero\nZotero is a free reference and bibliography manager, just like Mendley and others.\nYou can use Zotero to organize your papers, and to create automatic in-line citations and references.\nTo download, please visit https://www.zotero.org/download/ and select your operating system.\nYou may need to register for a free account at https://www.zotero.org/user/register\n\n2.7.1 Shared libraries\nAn interest thing in Zotero is that you can share a bibliography collection with others, for instance your research group or lab, and even those collections can be divided in sub-folders. And in that case, you can benefit from the readings of your colleagues.\nSee the U-Shift Zotero collection, for instance.:\n\n\n\n\n\n\n\n\n\n\n\nKeep in mind that automatic fields of references may need some adjustments. Always double check if the fields seem to be correct."
+    "text": "2.7 Zotero\nZotero is a free reference and bibliography manager, just like Mendley and others.\nYou can use Zotero to organize your papers, and to create automatic in-line citations and references.\nTo download, please visit https://www.zotero.org/download/ and select your operating system.\nYou may need to register for a free account at https://www.zotero.org/user/register\n\n2.7.1 Shared libraries\nAn interest thing in Zotero is that you can share a bibliography collection with others, for instance your research group or lab, and even those collections can be divided in sub-folders. And in that case, you can benefit from the readings of your colleagues.\nSee the U-Shift Zotero collection, for instance.:\n\n\n\n\n\n\n\nKeep in mind that automatic fields of references may need some adjustments. Always double check if the fields seem to be correct.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Software</span>"
+    ]
   },
   {
     "objectID": "software.html#footnotes",
     "href": "software.html#footnotes",
     "title": "2  Software",
     "section": "",
-    "text": "We will use RStudio, although if you already use other studio such as VScode, that’s also fine.↩︎"
+    "text": "We will use RStudio, although if you already use other studio such as VScode, that’s also fine.↩︎",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Software</span>"
+    ]
+  },
+  {
+    "objectID": "rmarkdown.html",
+    "href": "rmarkdown.html",
+    "title": "3  Using R Markdown",
+    "section": "",
+    "text": "3.1 What is R Markdown\nR Markdown is a file format for creating dynamic documents.\nIt is an R extension of the popular Markdown format, commonly used for writing and formatting text on the web, and incorporates R and Python code for statistical analysis, visualizations, and data manipulation.\nThe Rmarkdown document contains the text, the code and the results (figures, tables, or inline calculations), ensuring the analysis can be reproduced.\nIt allows to produce different output formats from a single file to one or more formats:",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Using R Markdown</span>"
+    ]
   },
   {
     "objectID": "rmarkdown.html#what-is-r-markdown",
     "href": "rmarkdown.html#what-is-r-markdown",
     "title": "3  Using R Markdown",
-    "section": "3.1 What is R Markdown",
-    "text": "3.1 What is R Markdown\nR Markdown is a file format for creating dynamic documents.\nIt is an R extension of the popular Markdown format, commonly used for writing and formatting text on the web, and incorporates R and Python code for statistical analysis, visualizations, and data manipulation.\nThe Rmarkdown document contains the text, the code and the results (figures, tables, or inline calculations), ensuring the analysis can be reproduced.\nIt allows to produce different output formats from a single file to one or more formats:\n\nHTML: Interactive and shareable reports.\nPDF: Print-ready documents, using LaTeX.\nWord: Editable reports .docx.\nSlides: Presentation-ready content using frameworks like xaringan or ioslides."
+    "section": "",
+    "text": "HTML: Interactive and shareable reports.\nPDF: Print-ready documents, using LaTeX.\nWord: Editable reports .docx.\nSlides: Presentation-ready content using frameworks like xaringan or ioslides.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Using R Markdown</span>"
+    ]
   },
   {
     "objectID": "rmarkdown.html#how-it-works",
     "href": "rmarkdown.html#how-it-works",
     "title": "3  Using R Markdown",
     "section": "3.2 How it works",
-    "text": "3.2 How it works\nWhen you run render, R Markdown feeds the .Rmd file to knitr, which executes all of the code chunks and creates a new markdown (.md) document which includes the code and its output.\nThe markdown file generated by knitr is then processed by pandoc which is responsible for creating the finished format.\n\n\n\nSource: RStudio, PBC\n\n\nThis may sound complicated, but R Markdown makes it extremely simple by encapsulating all of the above processing into a single render function.\n\n\n\n\n\n\nSee more at: https://rmarkdown.rstudio.com/lesson-1.html or Xie, Allaire, and Grolemund (2013) ."
+    "text": "3.2 How it works\nWhen you run render, R Markdown feeds the .Rmd file to knitr, which executes all of the code chunks and creates a new markdown (.md) document which includes the code and its output.\nThe markdown file generated by knitr is then processed by pandoc which is responsible for creating the finished format.\n\n\n\nSource: RStudio, PBC\n\n\nThis may sound complicated, but R Markdown makes it extremely simple by encapsulating all of the above processing into a single render function.\n\n\n\n\n\n\nSee more at: https://rmarkdown.rstudio.com/lesson-1.html or Xie, Allaire, and Grolemund (2013) .",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Using R Markdown</span>"
+    ]
   },
   {
     "objectID": "rmarkdown.html#example",
     "href": "rmarkdown.html#example",
     "title": "3  Using R Markdown",
     "section": "3.3 Example",
-    "text": "3.3 Example\n\nCreate an .Rmd file in RStudio, and use HTML as output.\n\n\nHave a look at the template example and leave it as it is.\nSave your new .Rmd\nKnit the document (click “Knit” in RStudio) to generate an output in the desired format.\n\nNow, change it to pdf_document in the yaml\noutput: pdf_document\n\n\n\n\n\n\nIt may take a while for the first time in your computer, due to the tlmgr packages it needs.\nThe next times will be smoother!\n\n\n\nOpen the output pdf."
+    "text": "3.3 Example\n\nCreate an .Rmd file in RStudio, and use HTML as output.\n\n\nHave a look at the template example and leave it as it is.\nSave your new .Rmd\nKnit the document (click “Knit” in RStudio) to generate an output in the desired format.\n\nNow, change it to pdf_document in the yaml\noutput: pdf_document\n\n\n\n\n\n\nIt may take a while for the first time in your computer, due to the tlmgr packages it needs.\nThe next times will be smoother!\n\n\n\nOpen the output pdf.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Using R Markdown</span>"
+    ]
   },
   {
     "objectID": "rmarkdown.html#code-chunk",
     "href": "rmarkdown.html#code-chunk",
     "title": "3  Using R Markdown",
     "section": "3.4 Code Chunk",
-    "text": "3.4 Code Chunk\nTo load libraries, load your data, make your analysis, plot your results, you will need to include code chunks along your document. You can also use the Ctrl+Alt+i shortcut.\n\n\n\n\n\nA code chunk in R will show up\n\nYou can change the language of your code chunk by changing it between the {}\n\nIf you want to suppress the messages and warnings, or to hide the code, you can set it on your first code chunk with\n\nor chunk by chunk.\nAbove, we use five arguments:\n\ninclude = FALSE prevents code and results from appearing in the finished file. R Markdown still runs the code in the chunk, and the results can be used by other chunks.\necho = FALSE prevents code, but not the results from appearing in the finished file. This is a useful way to embed figures.\nmessage = FALSE prevents messages that are generated by code from appearing in the finished file.\nwarning = FALSE prevents warnings that are generated by code from appearing in the finished.\nfig.cap = \"...\" adds a caption to graphical results.\n\nSee the R Markdown Reference Guide for a complete list of knitr chunk options."
+    "text": "3.4 Code Chunk\nTo load libraries, load your data, make your analysis, plot your results, you will need to include code chunks along your document. You can also use the Ctrl+Alt+i shortcut.\n\n\n\n\n\nA code chunk in R will show up\n\nYou can change the language of your code chunk by changing it between the {}\n\nIf you want to suppress the messages and warnings, or to hide the code, you can set it on your first code chunk with\n\nor chunk by chunk.\nAbove, we use five arguments:\n\ninclude = FALSE prevents code and results from appearing in the finished file. R Markdown still runs the code in the chunk, and the results can be used by other chunks.\necho = FALSE prevents code, but not the results from appearing in the finished file. This is a useful way to embed figures.\nmessage = FALSE prevents messages that are generated by code from appearing in the finished file.\nwarning = FALSE prevents warnings that are generated by code from appearing in the finished.\nfig.cap = \"...\" adds a caption to graphical results.\n\nSee the R Markdown Reference Guide for a complete list of knitr chunk options.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Using R Markdown</span>"
+    ]
   },
   {
     "objectID": "rmarkdown.html#yaml",
     "href": "rmarkdown.html#yaml",
     "title": "3  Using R Markdown",
     "section": "3.5 YAML Header",
-    "text": "3.5 YAML Header\nContains metadata such as the title, author, output format, and date. All your document settings, such as page size, table of contents, colors, and so on, live here.\nExample of a simple YAML header:\n---\ntitle: \"My Report\"\nauthor: \"Your Name\"\ndate: \"2024-12-10\"\noutput: html_document\nnumber_sections: true\n---"
+    "text": "3.5 YAML Header\nContains metadata such as the title, author, output format, and date. All your document settings, such as page size, table of contents, colors, and so on, live here.\nExample of a simple YAML header:\n---\ntitle: \"My Report\"\nauthor: \"Your Name\"\ndate: \"2024-12-10\"\noutput: html_document\nnumber_sections: true\n---",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Using R Markdown</span>"
+    ]
   },
   {
     "objectID": "rmarkdown.html#using-bookdown",
     "href": "rmarkdown.html#using-bookdown",
     "title": "3  Using R Markdown",
     "section": "3.6 Using bookdown",
-    "text": "3.6 Using bookdown\nIf you want to have more control of the contents of your pdf, for instance the heading numbering and figure numbering related to the heading (Figure 1.2), you may want to use bookdown instead of the simple pdf_output.\n---\noutput: \n  bookdown::pdf_document2:\n    toc: yes\n    fig_caption: true\n---\n\n\n\n\n\n\nBe aware that the yaml header is very very sensitive to spaces and indentations.\n\n\n\n\n\n\n\n\n\nXie, Yihui, Joseph J Allaire, and Garrett Grolemund. 2013. R Markdown: The Definitive Guide. Chapman; Hall/CRC. https://bookdown.org/yihui/rmarkdown/."
+    "text": "3.6 Using bookdown\nIf you want to have more control of the contents of your pdf, for instance the heading numbering and figure numbering related to the heading (Figure 1.2), you may want to use bookdown instead of the simple pdf_output.\n---\noutput: \n  bookdown::pdf_document2:\n    toc: yes\n    fig_caption: true\n---\n\n\n\n\n\n\nBe aware that the yaml header is very very sensitive to spaces and indentations.\n\n\n\n\n\n\n\n\n\nXie, Yihui, Joseph J Allaire, and Garrett Grolemund. 2013. R Markdown: The Definitive Guide. Chapman; Hall/CRC. https://bookdown.org/yihui/rmarkdown/.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Using R Markdown</span>"
+    ]
   },
   {
-    "objectID": "startup.html#references",
-    "href": "startup.html#references",
+    "objectID": "startup.html",
+    "href": "startup.html",
     "title": "4  Using rticles template",
-    "section": "4.1 References",
-    "text": "4.1 References\nIf you type @ a citation manager will open with the list of your collection in your zotero librarty.\nYou can use other sources by going to Insert &gt; Citation…\n\n\n\n\n\nUse the doi (without the https://doi.org/ !!) to search for a document that is not in your zotero library, and add it to your references.bib file directly."
+    "section": "",
+    "text": "4.1 References\nIf you type @ a citation manager will open with the list of your collection in your zotero librarty.\nYou can use other sources by going to Insert &gt; Citation…\nUse the doi (without the https://doi.org/ !!) to search for a document that is not in your zotero library, and add it to your references.bib file directly.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Using rticles template</span>"
+    ]
   },
   {
     "objectID": "startup.html#citation-style-language",
     "href": "startup.html#citation-style-language",
     "title": "4  Using rticles template",
     "section": "4.2 Citation Style Language",
-    "text": "4.2 Citation Style Language\nThere are several standards to choose from when considering a Citation Style Language (csl).\nZotero Style Repository offers a extensive list with examples, organized by journal name, and scientific fields.\nIf using a csl, just copy the link for the journal you are consider, and put it into your yaml1."
+    "text": "4.2 Citation Style Language\nThere are several standards to choose from when considering a Citation Style Language (csl).\nZotero Style Repository offers a extensive list with examples, organized by journal name, and scientific fields.\nIf using a csl, just copy the link for the journal you are consider, and put it into your yaml1.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Using rticles template</span>"
+    ]
   },
   {
     "objectID": "startup.html#footnotes",
     "href": "startup.html#footnotes",
     "title": "4  Using rticles template",
     "section": "",
-    "text": "You may need to make citation_package: default.↩︎"
+    "text": "You may need to make citation_package: default.↩︎",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Using rticles template</span>"
+    ]
   },
   {
     "objectID": "exercise.html",
     "href": "exercise.html",
     "title": "5  Exercise",
     "section": "",
-    "text": "Create an R Markdown file (.Rmd) and select an rticles template of your choice:\n\nElsevier: Transportation Research Part A\nSpringer: Lecture Notes in Computer Science\nTransportation Research Board (TRB)\nTaylor & Francis\n\nKnit it first to make sure any package is missing and the output looks fine\nChange your YAML document to include\n\nYour name\nYour affiliation and address\nYour e-mail\n\nChange your document to include the following chapters, using ## headings\n\nIntroduction\nLiterature review\nMethods\n\nCase Study\nData collection\n\nResults\nConclusions\n\nFurther Research\n\nFunding\nReferences\n\nMake the Funding and References section as unnumbered, by putting {.unnumbered} after the heading title\nAdd the following to the abstract:\n\nUrban mobility is a critical component of sustainable city development, influencing economic productivity, social equity, and environmental sustainability. It encompasses the movement of people and goods within urban areas, integrating various modes of transportation such as walking, cycling, public transit, and private vehicles. Effective urban mobility systems aim to ensure accessibility, affordability, and efficiency while minimizing environmental impacts and addressing the diverse needs of urban populations.\nIn recent years, the rapid pace of urbanization has introduced complex challenges, including traffic congestion, air pollution, and inequitable access to transport options. These issues disproportionately affect vulnerable populations, such as low-income residents, the elderly, and adolescents, highlighting the need for inclusive planning. The emergence of innovative technologies, such as shared mobility platforms, autonomous vehicles, and smart city solutions, offers opportunities to reimagine urban transport networks. However, successful implementation requires a balance between technological advancement, community engagement, and policy alignment.\nThis paper explores the importance of integrating data-driven approaches, participatory planning, and sustainable policies to enhance urban mobility systems. By prioritizing multimodal transportation, reducing dependency on private vehicles, and fostering equitable access to opportunities, cities can transition toward a more sustainable and resilient future.\n\nCount the words of the abstract and make sure that they are up to 200 words, using WordcountAddin.\nInclude the following papers as a references in the Literature Review section:\n\nhttps://doi.org/10.1016/j.trd.2021.102734\nhttps://doi.org/10.1201/9780203730058\n\nInclude a table of contents\nMake a cross-reference before a figure (pointing in the text to see Figure 1)\nKnit your pdf!\nNumber lines (linenumbers: true)\nMake it a paper for review, instead of preprint\nMake it doubleblind in classoption\nChange the biblio-style to elsarticle-num (you may need to remove authoryear from classoption)\nColor your citations in text\nKnit your pdf again!"
+    "text": "Create an R Markdown file (.Rmd) and select an rticles template of your choice:\n\nElsevier: Transportation Research Part A\nSpringer: Lecture Notes in Computer Science\nTransportation Research Board (TRB)\nTaylor & Francis\n\nKnit it first to make sure any package is missing and the output looks fine\nChange your YAML document to include\n\nYour name\nYour affiliation and address\nYour e-mail\n\nChange your document to include the following chapters, using ## headings\n\nIntroduction\nLiterature review\nMethods\n\nCase Study\nData collection\n\nResults\nConclusions\n\nFurther Research\n\nFunding\nReferences\n\nMake the Funding and References section as unnumbered, by putting {.unnumbered} after the heading title\nAdd the following to the abstract:\n\nUrban mobility is a critical component of sustainable city development, influencing economic productivity, social equity, and environmental sustainability. It encompasses the movement of people and goods within urban areas, integrating various modes of transportation such as walking, cycling, public transit, and private vehicles. Effective urban mobility systems aim to ensure accessibility, affordability, and efficiency while minimizing environmental impacts and addressing the diverse needs of urban populations.\nIn recent years, the rapid pace of urbanization has introduced complex challenges, including traffic congestion, air pollution, and inequitable access to transport options. These issues disproportionately affect vulnerable populations, such as low-income residents, the elderly, and adolescents, highlighting the need for inclusive planning. The emergence of innovative technologies, such as shared mobility platforms, autonomous vehicles, and smart city solutions, offers opportunities to reimagine urban transport networks. However, successful implementation requires a balance between technological advancement, community engagement, and policy alignment.\nThis paper explores the importance of integrating data-driven approaches, participatory planning, and sustainable policies to enhance urban mobility systems. By prioritizing multimodal transportation, reducing dependency on private vehicles, and fostering equitable access to opportunities, cities can transition toward a more sustainable and resilient future.\n\nCount the words of the abstract and make sure that they are up to 200 words, using WordcountAddin.\nInclude the following papers as a references in the Literature Review section:\n\nhttps://doi.org/10.1016/j.trd.2021.102734\nhttps://doi.org/10.1201/9780203730058\n\nInclude a table of contents\nMake a cross-reference before a figure (pointing in the text to see Figure 1)\nKnit your pdf!\nNumber lines (linenumbers: true)\nMake it a paper for review, instead of preprint\nMake it doubleblind in classoption\nChange the biblio-style to elsarticle-num (you may need to remove authoryear from classoption)\nColor your citations in text\nKnit your pdf again!",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Exercise</span>"
+    ]
+  },
+  {
+    "objectID": "tips.html",
+    "href": "tips.html",
+    "title": "6  Tips with R Markdown",
+    "section": "",
+    "text": "6.1 Source vs. Visual mode\nYou may want to work directly in the Visual mode, to “what you see is what you get”, and switch to the Source mode for very specific code things.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Tips with R Markdown</span>"
+    ]
   },
   {
     "objectID": "tips.html#sourcevisual",
     "href": "tips.html#sourcevisual",
     "title": "6  Tips with R Markdown",
-    "section": "6.1 Source vs. Visual mode",
-    "text": "6.1 Source vs. Visual mode\nYou may want to work directly in the Visual mode, to “what you see is what you get”, and switch to the Source mode for very specific code things.\n\n\n\nSource mode\n\n\n\n\n\nVisual mode"
+    "section": "",
+    "text": "Source mode\n\n\n\n\n\nVisual mode",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Tips with R Markdown</span>"
+    ]
   },
   {
     "objectID": "tips.html#suggestions",
     "href": "tips.html#suggestions",
     "title": "6  Tips with R Markdown",
     "section": "6.2 Suggestions",
-    "text": "6.2 Suggestions\n/\nType Ctrl + / to search for anything you want to include"
+    "text": "6.2 Suggestions\n/\nType Ctrl + / to search for anything you want to include",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Tips with R Markdown</span>"
+    ]
   },
   {
     "objectID": "tips.html#crossreference",
     "href": "tips.html#crossreference",
     "title": "6  Tips with R Markdown",
     "section": "6.3 Cross-references",
-    "text": "6.3 Cross-references\nYou can refer to sections, figures, tables, and equations in your document using the @ref syntax.\n\n6.3.1 With Sections\nYou can refer to sections like this: [Section 1](#Introduction). This will show as “Section 1”.\n\n\n6.3.2 With figures\nYou can refer to figures like this: \\@ref(fig:plot1). This will show as “Figure 1”. For that, you need to add a label to the figure chunk, like this: {#fig:plot1}. or fig.cap=\"\\label{plot1} Caption of the plot\" in your r chunk.\n\n\nCode\nplot(cars)\n\n\n\n\n6.3.3 With tables\nYou can refer to tables like this: \\@ref(tab:table1). This will show as “Table 1”. For that, you need to add a label to the table caption like this:\n\n\nCode\n# example with kable\nknitr::kable(head(iris),\n             caption = \"\\\\label{table1}Caption of the table\", # label here\n             fotmat = latex,\n             booktabs = TRUE)\n\n\n\n\n\n\n\n\nYou don’t need to use an ordered number, but just a name/label to your figures and tables. R markdown will handle then the order of them and provide them sequential numbering."
+    "text": "6.3 Cross-references\nYou can refer to sections, figures, tables, and equations in your document using the @ref syntax.\n\n6.3.1 With Sections\nYou can refer to sections like this: [Section 1](#Introduction). This will show as “Section 1”.\n\n\n6.3.2 With figures\nYou can refer to figures like this: \\@ref(fig:plot1). This will show as “Figure 1”. For that, you need to add a label to the figure chunk, like this: {#fig:plot1}. or fig.cap=\"\\label{plot1} Caption of the plot\" in your r chunk.\n\n\nCode\nplot(cars)\n\n\n\n\n6.3.3 With tables\nYou can refer to tables like this: \\@ref(tab:table1). This will show as “Table 1”. For that, you need to add a label to the table caption like this:\n\n\nCode\n# example with kable\nknitr::kable(head(iris),\n             caption = \"\\\\label{table1}Caption of the table\", # label here\n             fotmat = latex,\n             booktabs = TRUE)\n\n\n\n\n\n\n\n\nYou don’t need to use an ordered number, but just a name/label to your figures and tables. R markdown will handle then the order of them and provide them sequential numbering.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Tips with R Markdown</span>"
+    ]
   },
   {
     "objectID": "tips.html#toc",
     "href": "tips.html#toc",
     "title": "6  Tips with R Markdown",
     "section": "6.4 Create a table of contents",
-    "text": "6.4 Create a table of contents\nYou can create a table of contents (toc) with the headings of your document, a list of tables (lot) or a list of figures (lof), simply by adding the following in the YAML:\n---\ntitle: \"My Report\"\nauthor: \"Your Name\"\ndate: \"2024-12-10\"\noutput: pdf_document\ntoc: true\nnumbersections: true\nnumber-depth: 3\nlof: true\nlot: true\n---"
+    "text": "6.4 Create a table of contents\nYou can create a table of contents (toc) with the headings of your document, a list of tables (lot) or a list of figures (lof), simply by adding the following in the YAML:\n---\ntitle: \"My Report\"\nauthor: \"Your Name\"\ndate: \"2024-12-10\"\noutput: pdf_document\ntoc: true\nnumbersections: true\nnumber-depth: 3\nlof: true\nlot: true\n---",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Tips with R Markdown</span>"
+    ]
   },
   {
     "objectID": "tips.html#include-an-image",
     "href": "tips.html#include-an-image",
     "title": "6  Tips with R Markdown",
     "section": "6.5 Include an image",
-    "text": "6.5 Include an image\nTo include a image that is not produced with R or Python (for instance a methods flowchart), you can click on insert image in Visual mode, browse your image file, adjust the size, and provide a proper caption.\nIf it is produced with R or Py, simply let your code do it for you. Example:\n\n\nCode\nlibrary(ggplot2)\nggplot(mpg, aes(displ, hwy, colour = class)) + \n  geom_point()\n\n\n\n\n\nA proper caption for a ggplot.\n\n\n\n\n\n6.5.1 Image position\nBy default, LaTeX puts your images on the top of a page, or arranges them in order to get the minimum white spaces possible. That is why LaTeX documents look so nice an pretty.\nNevertheless, you can force the position of your image by adding the following to your chunk: fig.pos = \"H\". Other options:\n\nh: Place the float here, i.e., approximately at the same point it occurs in the source text.\nt: Position at the top of the page (default)\nb: Position at the bottom of the page.\np: Put on a special page for floats only.\n!: Override internal parameters LaTeX uses for determining “good” float positions.\nH: Place the float at precisely the location in the LaTeX code. This requires the float package (\\usepackage{float})."
+    "text": "6.5 Include an image\nTo include a image that is not produced with R or Python (for instance a methods flowchart), you can click on insert image in Visual mode, browse your image file, adjust the size, and provide a proper caption.\nIf it is produced with R or Py, simply let your code do it for you. Example:\n\n\nCode\nlibrary(ggplot2)\nggplot(mpg, aes(displ, hwy, colour = class)) + \n  geom_point()\n\n\n\n\n\nA proper caption for a ggplot.\n\n\n\n\n\n6.5.1 Image position\nBy default, LaTeX puts your images on the top of a page, or arranges them in order to get the minimum white spaces possible. That is why LaTeX documents look so nice an pretty.\nNevertheless, you can force the position of your image by adding the following to your chunk: fig.pos = \"H\". Other options:\n\nh: Place the float here, i.e., approximately at the same point it occurs in the source text.\nt: Position at the top of the page (default)\nb: Position at the bottom of the page.\np: Put on a special page for floats only.\n!: Override internal parameters LaTeX uses for determining “good” float positions.\nH: Place the float at precisely the location in the LaTeX code. This requires the float package (\\usepackage{float}).",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Tips with R Markdown</span>"
+    ]
   },
   {
     "objectID": "tips.html#inline-math",
     "href": "tips.html#inline-math",
     "title": "6  Tips with R Markdown",
     "section": "6.6 Inline math",
-    "text": "6.6 Inline math\nYou can use your results along the text, so every time you run the document, the results are also updated. Example:\nResults show that 96.1559172% of the population uses car as a main mode of transport. 3+2 = 5 is a nice number.\nThis is how you would write it:\nResults show that 19.4002806 % of the population uses car as a main mode of transport. 3+2 = 5 is a nice number.\nYou can directly call your previously set variables."
+    "text": "6.6 Inline math\nYou can use your results along the text, so every time you run the document, the results are also updated. Example:\nResults show that 53.9448583% of the population uses car as a main mode of transport. 3+2 = 5 is a nice number.\nThis is how you would write it:\nResults show that 73.1769811 % of the population uses car as a main mode of transport. 3+2 = 5 is a nice number.\nYou can directly call your previously set variables.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Tips with R Markdown</span>"
+    ]
   },
   {
     "objectID": "tips.html#latexpkgs",
     "href": "tips.html#latexpkgs",
     "title": "6  Tips with R Markdown",
     "section": "6.7 LaTeX packages",
-    "text": "6.7 LaTeX packages\nSometimes, you need to use some LaTeX packages to customize your document. To use those, you can add the following in the YAML:\npreamble: |\n  \\biboptions{authoryear}\n  \\usepackage{url}\n  \\usepackage{pdflscape}\n  \\usepackage{float}\n  \\usepackage{booktabs}\n  \\usepackage{longtable}\n  \\usepackage{makecell}\n  \\usepackage{multirow}"
+    "text": "6.7 LaTeX packages\nSometimes, you need to use some LaTeX packages to customize your document. To use those, you can add the following in the YAML:\npreamble: |\n  \\biboptions{authoryear}\n  \\usepackage{url}\n  \\usepackage{pdflscape}\n  \\usepackage{float}\n  \\usepackage{booktabs}\n  \\usepackage{longtable}\n  \\usepackage{makecell}\n  \\usepackage{multirow}",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Tips with R Markdown</span>"
+    ]
   },
   {
     "objectID": "tips.html#awsome-tables-with-kbl",
     "href": "tips.html#awsome-tables-with-kbl",
     "title": "6  Tips with R Markdown",
     "section": "6.8 Awsome tables with kbl",
-    "text": "6.8 Awsome tables with kbl\nkable and kableExtra allows to create pretty tables with R.\n\n\nCode\nlibrary(kableExtra)\ncardata = mtcars[1:5, 1:6]\n\nkbl(cardata,\n    caption = \"An awsome table about cars.\") |&gt;\n  kable_styling() \n\n\n\nAn awsome table about cars.\n\n\n\nmpg\ncyl\ndisp\nhp\ndrat\nwt\n\n\n\n\nMazda RX4\n21.0\n6\n160\n110\n3.90\n2.620\n\n\nMazda RX4 Wag\n21.0\n6\n160\n110\n3.90\n2.875\n\n\nDatsun 710\n22.8\n4\n108\n93\n3.85\n2.320\n\n\nHornet 4 Drive\n21.4\n6\n258\n110\n3.08\n3.215\n\n\nHornet Sportabout\n18.7\n8\n360\n175\n3.15\n3.440\n\n\n\n\n\n\n\nCheck out the documentation for .pdf format: https://haozhu233.github.io/kableExtra/awesome_table_in_pdf.pdf"
+    "text": "6.8 Awsome tables with kbl\nkable and kableExtra allows to create pretty tables with R.\n\n\nCode\nlibrary(kableExtra)\ncardata = mtcars[1:5, 1:6]\n\nkbl(cardata,\n    caption = \"An awsome table about cars.\") |&gt;\n  kable_styling() \n\n\n\nAn awsome table about cars.\n\n\n\nmpg\ncyl\ndisp\nhp\ndrat\nwt\n\n\n\n\nMazda RX4\n21.0\n6\n160\n110\n3.90\n2.620\n\n\nMazda RX4 Wag\n21.0\n6\n160\n110\n3.90\n2.875\n\n\nDatsun 710\n22.8\n4\n108\n93\n3.85\n2.320\n\n\nHornet 4 Drive\n21.4\n6\n258\n110\n3.08\n3.215\n\n\nHornet Sportabout\n18.7\n8\n360\n175\n3.15\n3.440\n\n\n\n\n\n\n\nCheck out the documentation for .pdf format: https://haozhu233.github.io/kableExtra/awesome_table_in_pdf.pdf",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Tips with R Markdown</span>"
+    ]
   },
   {
     "objectID": "tips.html#colorurl",
     "href": "tips.html#colorurl",
     "title": "6  Tips with R Markdown",
     "section": "6.9 Change colors of references and links",
-    "text": "6.9 Change colors of references and links\nTo color your references and urls you can add the following to your yaml:\n---\nlink-citations: true\nlinkcolor: teal\nurlcolor: teal\n---"
+    "text": "6.9 Change colors of references and links\nTo color your references and urls you can add the following to your yaml:\n---\nlink-citations: true\nlinkcolor: teal\nurlcolor: teal\n---",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Tips with R Markdown</span>"
+    ]
   },
   {
     "objectID": "tips.html#add-a-landscape-page",
     "href": "tips.html#add-a-landscape-page",
     "title": "6  Tips with R Markdown",
     "section": "6.10 Add a landscape page",
-    "text": "6.10 Add a landscape page\nTo include a landscape page in your pdf, for instance to present a very large table, you should use the \\usepackage{lscape} in your yaml preamble, and add the following code in Source mode, before and after your table chunk:\n\\begin{landscape}\n\nYour code to make a large table\n\n\\end{landscape}"
+    "text": "6.10 Add a landscape page\nTo include a landscape page in your pdf, for instance to present a very large table, you should use the \\usepackage{lscape} in your yaml preamble, and add the following code in Source mode, before and after your table chunk:\n\\begin{landscape}\n\nYour code to make a large table\n\n\\end{landscape}",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Tips with R Markdown</span>"
+    ]
   },
   {
     "objectID": "tips.html#converting-to-word-.doc",
     "href": "tips.html#converting-to-word-.doc",
     "title": "6  Tips with R Markdown",
     "section": "6.11 Converting to word .doc",
-    "text": "6.11 Converting to word .doc\nIt can be handful to convert your nice .pdf to a .doc file to send it to your supervisor, instead of a LaTeX or pdf file.\nTo do so, you can simply open your favorite word processor and open your pdf file inside. Click OK to convert when prompt.\n\n\n\nExample of this pdf book opened in MS Word\n\n\nMake some adjustments (sometimes it requires margins, spacing or line numbers), save it as .doc or .docx, and you are ready to go!\nNo headings, table of contents, citations, cross-references, figures, tables are missing."
+    "text": "6.11 Converting to word .doc\nIt can be handful to convert your nice .pdf to a .doc file to send it to your supervisor, instead of a LaTeX or pdf file.\nTo do so, you can simply open your favorite word processor and open your pdf file inside. Click OK to convert when prompt.\n\n\n\nExample of this pdf book opened in MS Word\n\n\nMake some adjustments (sometimes it requires margins, spacing or line numbers), save it as .doc or .docx, and you are ready to go!\nNo headings, table of contents, citations, cross-references, figures, tables are missing.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Tips with R Markdown</span>"
+    ]
   },
   {
     "objectID": "tips.html#elsevier-paper-example",
     "href": "tips.html#elsevier-paper-example",
     "title": "6  Tips with R Markdown",
     "section": "6.12 Elsevier paper example",
-    "text": "6.12 Elsevier paper example\nExample of a paper written in R Markdown and submitted in pdf and LaTeX for the Elsevier journal Computers, Environment and Urban Studies:\nhttps://github.com/U-Shift/biclar/blob/master/paper/PaperCEUS/PaperCEUS.Rmd\nThis can be useful to get an idea how things work, and compare with the final result (Félix, Moura, and Lovelace 2025)."
+    "text": "6.12 Elsevier paper example\nExample of a paper written in R Markdown and submitted in pdf and LaTeX for the Elsevier journal Computers, Environment and Urban Studies:\nhttps://github.com/U-Shift/biclar/blob/master/paper/PaperCEUS/PaperCEUS.Rmd\nThis can be useful to get an idea how things work, and compare with the final result (Félix, Moura, and Lovelace 2025).",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Tips with R Markdown</span>"
+    ]
   },
   {
     "objectID": "tips.html#knitr-in-project-vs.-document",
     "href": "tips.html#knitr-in-project-vs.-document",
     "title": "6  Tips with R Markdown",
     "section": "6.13 Knitr in Project vs. Document",
-    "text": "6.13 Knitr in Project vs. Document\nIf your R Markdown (.Rmd) document is not in the root of your RStudio Project (.Rproj ) (i.e. - in the same folder), and if you have data or images that are in paths reffered to the project, you may want to change the knit configurations for it to work.\nGo to Tools &gt; Global options &gt; R Markdown\nIn that case select Evaluate chunks in Project directory."
+    "text": "6.13 Knitr in Project vs. Document\nIf your R Markdown (.Rmd) document is not in the root of your RStudio Project (.Rproj ) (i.e. - in the same folder), and if you have data or images that are in paths reffered to the project, you may want to change the knit configurations for it to work.\nGo to Tools &gt; Global options &gt; R Markdown\nIn that case select Evaluate chunks in Project directory.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Tips with R Markdown</span>"
+    ]
   },
   {
     "objectID": "tips.html#source-files-when-submitting-to-a-journal",
     "href": "tips.html#source-files-when-submitting-to-a-journal",
     "title": "6  Tips with R Markdown",
     "section": "6.14 Source Files when submitting to a journal",
-    "text": "6.14 Source Files when submitting to a journal\nUsually journals accept the latex file (.tex) along the .pdf.\nFor that, you should prepare a SourceFiles.zip including:\n\nThe LaTeX file paper.tex\nThe used bibliography references.bib\nA citation style if used transportation_research.csl\nAny images files in a img folder\nThe paper.pdf file\n\n\n\n\n\n\n\nFélix, Rosa, Filipe Moura, and Robin Lovelace. 2025. “Reproducible Methods for Modeling Combined Public Transport and Cycling Trips and Associated Benefits: Evidence from the biclaR Tool.” Computers, Environment and Urban Systems 117 (April): 102230. https://doi.org/10.1016/j.compenvurbsys.2024.102230."
+    "text": "6.14 Source Files when submitting to a journal\nUsually journals accept the latex file (.tex) along the .pdf.\nFor that, you should prepare a SourceFiles.zip including:\n\nThe LaTeX file paper.tex\nThe used bibliography references.bib\nA citation style if used transportation_research.csl\nAny images files in a img folder\nThe paper.pdf file\n\n\n\n\n\n\n\nFélix, Rosa, Filipe Moura, and Robin Lovelace. 2025. “Reproducible Methods for Modeling Combined Public Transport and Cycling Trips and Associated Benefits: Evidence from the biclaR Tool.” Computers, Environment and Urban Systems 117 (April): 102230. https://doi.org/10.1016/j.compenvurbsys.2024.102230.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Tips with R Markdown</span>"
+    ]
   },
   {
-    "objectID": "about.html#rosa-félix",
-    "href": "about.html#rosa-félix",
+    "objectID": "about.html",
+    "href": "about.html",
     "title": "About",
-    "section": "Rosa Félix",
-    "text": "Rosa Félix\nSenior Posdoctoral Researcher and Invited Assistant Professor\nCERIS, Instituto Superior Técnico - University of Lisbon\nWebsite | Google Scholar | Twitter | GitHub | Linkedin\nShort bio\nRosa Félix is a senior post-doctoral researcher at the Instituto Superior Técnico – University of Lisbon and member of the U-Shift lab, in the Transportation Research Group of CERIS. Having a background of Urban Planning Engineering, she completed her Ph.D. in Transport Systems in 2019 at Instituto Superior Técnico (MIT Portugal program), and was a Visiting Scholar at Portland State University in 2017/18.\nRosa is an active mobility researcher, and excels in R and GIS. She is an open source and reproducible research enthusiast. Her publications include articles on cycling and behavior change, and open source code solutions to specific GIS and mobility problems. Every year, Rosa lectures a course for cycling infrastructure planning and design for practitioners, and also teaches GIS for transportation and introduction to programming for MSc course of Transportation Systems. \nRosa has worked in multiple R&D and consultancy projects with both municipalities and industry, such as the Municipality of Lisbon (2019-2022) and the Department for Transportation of Lisbon Metro (2023), in which she developed a digital tool - biclaR - to support the planning of the metropolitan cycling network, in collaboration with Institute for Transport Studies of the University of Leeds."
+    "section": "",
+    "text": "Rosa Félix\nSenior Posdoctoral Researcher and Invited Assistant Professor\nCERIS, Instituto Superior Técnico - University of Lisbon\nWebsite | Google Scholar | Twitter | GitHub | Linkedin\nShort bio\nRosa Félix is a senior post-doctoral researcher at the Instituto Superior Técnico – University of Lisbon and member of the U-Shift lab, in the Transportation Research Group of CERIS. Having a background of Urban Planning Engineering, she completed her Ph.D. in Transport Systems in 2019 at Instituto Superior Técnico (MIT Portugal program), and was a Visiting Scholar at Portland State University in 2017/18.\nRosa is an active mobility researcher, and excels in R and GIS. She is an open source and reproducible research enthusiast. Her publications include articles on cycling and behavior change, and open source code solutions to specific GIS and mobility problems. Every year, Rosa lectures a course for cycling infrastructure planning and design for practitioners, and also teaches GIS for transportation and introduction to programming for MSc course of Transportation Systems.\nRosa has worked in multiple R&D and consultancy projects with both municipalities and industry, such as the Municipality of Lisbon (2019-2022) and the Department for Transportation of Lisbon Metro (2023), in which she developed a digital tool - biclaR - to support the planning of the metropolitan cycling network, in collaboration with Institute for Transport Studies of the University of Leeds.",
+    "crumbs": [
+      "About"
+    ]
   },
   {
     "objectID": "references.html",
     "href": "references.html",
     "title": "References",
     "section": "",
-    "text": "Félix, Rosa, Filipe Moura, and Robin Lovelace. 2025. “Reproducible\nMethods for Modeling Combined Public Transport and Cycling Trips and\nAssociated Benefits: Evidence from the biclaR Tool.”\nComputers, Environment and Urban Systems 117 (April): 102230.\nhttps://doi.org/10.1016/j.compenvurbsys.2024.102230.\n\n\nXie, Yihui, Joseph J Allaire, and Garrett Grolemund. 2013. R\nMarkdown: The Definitive Guide. Chapman; Hall/CRC. https://bookdown.org/yihui/rmarkdown/."
+    "text": "Félix, Rosa, Filipe Moura, and Robin Lovelace. 2025. “Reproducible\nMethods for Modeling Combined Public Transport and Cycling Trips and\nAssociated Benefits: Evidence from the biclaR Tool.”\nComputers, Environment and Urban Systems 117 (April): 102230.\nhttps://doi.org/10.1016/j.compenvurbsys.2024.102230.\n\n\nXie, Yihui, Joseph J Allaire, and Garrett Grolemund. 2013. R\nMarkdown: The Definitive Guide. Chapman; Hall/CRC. https://bookdown.org/yihui/rmarkdown/.",
+    "crumbs": [
+      "References"
+    ]
   }
 ]
